@@ -5,7 +5,7 @@ import client2 from "../src/assets/Images/company icons/ELFORGE.png";
 import client3 from "../src/assets/Images/company icons/hyundai transys.png";
 import client4 from "../src/assets/Images/company icons/Essae.png";
 import client5 from "../src/assets/Images/company icons/Fives.png";
-import client6 from "../src/assets/Images/company icons/Kia.png";
+
 import client7 from "../src/assets/Images/company icons/Malles.png";
 import client8 from "../src/assets/Images/company icons/Neel Metal.png";
 import client9 from "../src/assets/Images/company icons/Novares.png";
@@ -39,9 +39,6 @@ function About() {
     },
     {
       image: client5,
-    },
-    {
-      image: client6,
     },
     {
       image: client7,
