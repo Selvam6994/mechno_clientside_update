@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Dosis";
+}
+
+/* siteBody in app.jsx */
+.siteBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  min-width: 280px;
+  height: fit-content;
+  position: absolute;
+  border: 2px solid green;
+}
+/* navbar  start*/
+.navBar {
+  display: flex;
+  width: 100%;
+  min-width: 280px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 2;
+}
+
+/* Site Logo */
+.siteLogo {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 20px;
+  color: aliceblue;
+}
+
+/* Nav options */
+.navOptions {
+  padding: 0 15px 0 0;
+  width: 50%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+}
+
+/* Service Menu */
+.serviceMenu {
+  /* border: 2px solid green; */
+  position: absolute;
+  width: 150px;
+  height: fit-content;
+  margin: 265px 0px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Automation menu */
+.automationMenu {
+  position: absolute;
+  width: 150px;
+  height: fit-content;
+  margin: 170px 0px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* mobile menu box */
+.mobileMenuBox {
+  margin: 0 10px 0 0;
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  justify-content: end;
+}
+/* Mobile view main menu */
+.mobileViewMenu {
+  position: absolute;
+  width: 300px;
+  height: fit-content;
+  margin: 80px 0px 0 0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Main Menu */
+.mainMenu {
+  width: 150px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Sub-menu */
+.subMenu {
+  /* border: 2px solid green; */
+  width: 150px;
+  height: fit-content;
+}
+
+/* Service Sub Menu */
+.serviceSubMenu {
+  margin: 45px 0 0 0;
+  position: absolute;
+  width: 160px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Automation Sub Menu */
+.automationSubMenu {
+  margin: 90px 0 0 0;
+  position: absolute;
+  width: 160px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Homepage */
+.homePage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 280px;
+  z-index: 1;
+}
+
+/* homepage Carousel */
+.carousel {
+  height: 109vh;
+  width: 100%;
+  min-width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* images for carousel */
+.carouselImage {
+  height: 109vh;
+  width: 100%;
+  min-width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: cover;
+}
+
+/* text in carousel */
+/* .carouselCaption {
+  margin: 0 0 450px 0;
+} */
+
+/* home page client carousel */
+.clientCarousel {
+  width: 100%;
+  height: 200px;
+  min-width: 320px;
+  margin: 100px 0 0 0;
+  overflow: hidden;
+}
+
+/* inside client carousel */
+.innerCarousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.item {
+  min-width: 300px;
+  min-height: 100px;
+  border-radius: 1rem;
+  cursor: grab;
+}
+.item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* About-us & vission and mission section  */
+.aboutUs {
+  margin: 40px 0 0 0;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* about us para div */
+.aboutUsPara {
+  width: 80%;
+  min-width: 280px;
+  height: fit-content;
+}
+
+/* vision and misson div */
+.vissionMissonSection {
+  width: 80%;
+  min-width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* vision section */
+.vision,
+.mission {
+  max-width: 45%;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* footer section */
+.footer {
+  border: 2px solid green;
+  margin: 100px auto;
+  width: 100%;
+  height: 500px;
+  min-width: 280px;
+}
