@@ -4,6 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Button, Fab } from "@mui/material";
 import { motion } from "framer-motion";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { Link } from "react-router-dom";
 
 function Mobilenavoptions() {
   const [menuIcon, setMenuIcon] = useState(false);
@@ -15,6 +16,7 @@ function Mobilenavoptions() {
     {
       option: "Home",
       delay: 0.1,
+      linkTo:"/"
     },
     {
       option: "Services",
@@ -29,10 +31,12 @@ function Mobilenavoptions() {
     {
       option: "Gallery",
       delay: 0.4,
+      linkTo:"gallery"
     },
     {
       option: "Contact Us",
       delay: 0.5,
+      linkTo:"contact"
     },
   ];
 
@@ -94,7 +98,7 @@ function Mobilenavoptions() {
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
               >
-                <Button
+                <Link to={name.linkTo} ><Button
                   variant="contained"
                   style={{ width: "150px" }}
                   onMouseEnter={
@@ -120,6 +124,7 @@ function Mobilenavoptions() {
                   )}
                   {name.option}
                 </Button>
+                </Link>
               </motion.div>
             ))}
           </div>
