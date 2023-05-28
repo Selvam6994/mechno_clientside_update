@@ -142,6 +142,7 @@ function About() {
           <div className="vissionMissonSection">
             <Paper elevation={16} className="vision">
               <motion.div
+              className="visionContent"
                 whileTap={{ cursor: "grabbing" }}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -166,6 +167,7 @@ function About() {
             </Paper>
             <Paper elevation={16} className="mission">
               <motion.div
+              className="missionContent"
                 whileTap={{ cursor: "grabbing" }}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}

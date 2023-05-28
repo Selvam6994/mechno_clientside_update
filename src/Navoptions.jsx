@@ -2,6 +2,7 @@ import { Button, Fab } from "@mui/material";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Link } from "react-router-dom";
 
 function Navoptions({ options }) {
   const [serviceMenu, setServiceMenu] = useState(false);
@@ -19,18 +20,22 @@ function Navoptions({ options }) {
     {
       name: "Fabrication",
       delay: 0.1,
+      linkTo:"fabrications"
     },
     {
       name: "Trollys",
       delay: 0.2,
+      linkTo:"trollys"
     },
     {
       name: "Jigs And Fixtures",
       delay: 0.3,
+      linkTo:"jigsandfixtures"
     },
     {
       name: "Safety Fencing",
       delay: 0.4,
+      linkTo:"safetyfencing"
     },
   ];
 
@@ -39,20 +44,23 @@ function Navoptions({ options }) {
     {
       name: "Conveyors",
       delay: 0.1,
+      linkTo:"conveyors"
     },
     {
       name: "Robotics",
       delay: 0.2,
+      linkTo:"robotics"
     },
     {
       name: "Panel Design",
       delay: 0.3,
+      linkTo:"paneldesign"
     },
   ];
   return (
     <div className="navOptions">
       {options.map((name) => (
-        <Fab
+       <Link to={name.linkTo}> <Fab
           variant="extended"
           style={navOptionStyle}
           onMouseEnter={
@@ -128,6 +136,7 @@ function Navoptions({ options }) {
             ""
           )}
         </Fab>
+        </Link>
       ))}
     </div>
   );

@@ -26,6 +26,7 @@ function Navbar() {
   const navBarOptions = [
     {
       option: "Home",
+      linkTo:"/"
     },
     {
       option: "Services",
@@ -37,9 +38,11 @@ function Navbar() {
     },
     {
       option: "Gallery",
+      linkTo:"gallery"
     },
     {
       option: "Contact Us",
+      linkTo:"contact"
     },
   ];
 
