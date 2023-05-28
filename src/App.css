@@ -243,7 +243,6 @@
 
 /* Gallery Section */
 .gallery {
-  border: 2px solid green;
   height: fit-content;
   width: 95%;
   display: flex;
@@ -253,9 +252,8 @@
 
 /* View Images */
 .viewImages{
-  border: 2px solid green;
   position: fixed;
-  margin: 80px 0 0 0;
+
   width: 100%;
   min-width: 280px;
   height: 100vh;
@@ -265,34 +263,11 @@
   align-items: center;
   align-content: center;
   background-color: rgba(255,255,255,0.8);
+  gap: 5rem;
 }
 
-.next,
-.prev {
-  top: calc(50% - 20px);
-  position: absolute;
-  background: rgb(1, 93, 232);
-  border-radius: 30px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-  z-index: 2;
-}
 
-.next {
-  right: 150px;
-}
 
-.prev {
-  left: 150px;
-  transform: scale(-1);
-}
 /* footer section */
 .footer {
   border: 2px solid green;

@@ -17,9 +17,17 @@ import image11 from "./assets/Images/Gallery/Image11.jpg";
 import image12 from "./assets/Images/Gallery/Image12.jpg";
 import image13 from "./assets/Images/Gallery/Image13.jpg";
 import { useState } from "react";
-import { Galleryimageanimation } from "./Galleryimageanimation";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { useMediaQuery } from "@mui/material";
+// import { Galleryimageanimation } from "./Galleryimageanimation";
+// import IconButton from "@mui/material/IconButton";
+// import CloseIcon from "@mui/icons-material/Close";
 
 function Gallery() {
   const itemData = [
@@ -43,11 +51,7 @@ function Gallery() {
       title: "Fixture ",
       id: 4,
     },
-    {
-      img: image5,
-      title: "partition Fencing",
-      id: 5,
-    },
+
     {
       img: image6,
       title: "Ariel view of fencing",
@@ -89,7 +93,11 @@ function Gallery() {
       id: 13,
     },
   ];
+
+  const galleryWidth = useMediaQuery("(min-width:1390px)");
   const [imageView, setImageView] = useState(false);
+  const [imageData, setImageData] = useState("");
+
   return (
     <div className="gallery">
       <h2 style={{ margin: "150px 0 0 0" }}>Our Gallery</h2>
@@ -99,25 +107,51 @@ function Gallery() {
             <Paper elevation={8} style={{ borderRadius: "5%" }}>
               <ImageListItem key={item.img}>
                 <img
-                  style={{ borderRadius: "5%" }}
+                  style={{ borderRadius: "5%", cursor: "pointer" }}
                   src={`${item.img}?w=248&fit=crop&auto=format`}
                   srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                   alt={item.title}
                   loading="lazy"
-                  onClick={() => setImageView(true)}
+                  onClick={() => {
+                    galleryWidth == true
+                      ? setImageView(true) || setImageData(item)
+                      : setImageView(false);
+                  }}
                 />
               </ImageListItem>
             </Paper>
           ))}
         </ImageList>
       </Box>
+      {console.log(imageData.img)}
       {imageView == true ? (
         <div className="viewImages">
-          <IconButton aria-label="close" onClick={() => setImageView(false)}>
-            <CloseIcon color="error" />
-          </IconButton>
-
-          <Galleryimageanimation></Galleryimageanimation>
+          <Paper
+            elevation={24}
+            style={{
+              width: "35%",
+              height: "650px",
+              objectFit: "cover",
+              borderRadius: "5%",
+            }}
+          >
+            <img
+              src={imageData.img}
+              alt={imageData.title}
+              style={{
+                width: "100%",
+                height: "500px",
+                objectFit: "cover",
+                borderRadius: "5%",
+              }}
+            />
+            <CardContent>
+              <h4>{imageData.title}</h4>
+            </CardContent>
+            <CardActions>
+              <Button onClick={() => setImageView(false)}><ArrowBackIcon/>Back</Button>
+            </CardActions>
+          </Paper>
         </div>
       ) : (
         ""
