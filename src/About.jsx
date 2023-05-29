@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import client1 from "../src/assets/Images/company icons/BONFIGLIOLI.png";
 import client2 from "../src/assets/Images/company icons/ELFORGE.png";
@@ -15,12 +15,10 @@ import client13 from "../src/assets/Images/company icons/Wia.png";
 import client14 from "../src/assets/Images/company icons/NewTech.png";
 import client15 from "../src/assets/Images/company icons/Alison.png";
 import client16 from "../src/assets/Images/company icons/Bgrneo.png";
-import { Paper } from '@mui/material';
-
+import { Paper } from "@mui/material";
 
 function About() {
-
-      // for about section transition
+  // for about section transition
   const [transition, setTransition] = useState(0);
 
   const scroll = () => {
@@ -29,7 +27,7 @@ function About() {
     }
   };
   window.addEventListener("scroll", scroll);
-    
+
   const clientLogos = [
     {
       image: client1,
@@ -68,11 +66,11 @@ function About() {
       image: client16,
     },
     {
-        image: client2,
-      },
-      {
-        image: client3,
-      },
+      image: client2,
+    },
+    {
+      image: client3,
+    },
   ];
 
   const [width, setWidth] = useState(0);
@@ -85,32 +83,6 @@ function About() {
 
   return (
     <div>
-          <motion.div
-        className="clientCarousel"
-        whileTap={{ cursor: "grabbing" }}
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      >
-        <motion.div
-          ref={carousel}
-          className="innerCarousel"
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-        >
-          {clientLogos.map((logo) => {
-            return (
-              <motion.div className="item" whileTap={{ cursor: "grabbing" }}>
-                <img src={logo.image} alt=""></img>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </motion.div>
       {transition == true ? (
         <motion.div
           className="aboutUs"
@@ -123,12 +95,16 @@ function About() {
             ease: [0, 0.71, 0.2, 1.01],
           }}
         >
-          <h1>
-            <b style={{ color: "blue" }}>About Us</b>
-          </h1>
-          <div className="aboutUsPara">
+          <Paper
+            className="aboutUsPara"
+            elevation={16}
+            style={{ borderRadius: "20px" }}
+          >
+            <h1>
+              <b style={{ color: "blue" }}>About Us</b>
+            </h1>
             <p>
-              <h2>
+              <h2 style={{margin:"0 50px 0 50px"}}>
                 Mechno Dream Industry is a Young, Efficient and Passionate
                 workstation where all your industrial dreams would be brought
                 into reality. The organization is established with the moto of
@@ -137,12 +113,16 @@ function About() {
                 tremendous boost to your efficiency and profit.
               </h2>
             </p>
-          </div>
+          </Paper>
 
           <div className="vissionMissonSection">
-            <Paper elevation={16} className="vision">
+            <Paper
+              elevation={16}
+              className="vision"
+              style={{ borderRadius: "20px" }}
+            >
               <motion.div
-              className="visionContent"
+                className="visionContent"
                 whileTap={{ cursor: "grabbing" }}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -165,9 +145,13 @@ function About() {
                 </p>
               </motion.div>
             </Paper>
-            <Paper elevation={16} className="mission">
+            <Paper
+              elevation={16}
+              className="mission"
+              style={{ borderRadius: "20px" }}
+            >
               <motion.div
-              className="missionContent"
+                className="missionContent"
                 whileTap={{ cursor: "grabbing" }}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -194,8 +178,34 @@ function About() {
       ) : (
         ""
       )}
+      <motion.div
+        className="clientCarousel"
+        whileTap={{ cursor: "grabbing" }}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <motion.div
+          ref={carousel}
+          className="innerCarousel"
+          drag="x"
+          dragConstraints={{ right: 0, left: -width }}
+        >
+          {clientLogos.map((logo) => {
+            return (
+              <motion.div className="item" whileTap={{ cursor: "grabbing" }}>
+                <img src={logo.image} alt=""></img>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </motion.div>
     </div>
-  )
+  );
 }
 
 export default About;

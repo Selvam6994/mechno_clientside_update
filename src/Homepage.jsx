@@ -7,10 +7,10 @@ import caroselImage3 from "../src/assets/Images/Carousel Images/Carosel image3.w
 import Button from "@mui/material/Button";
 import About from "./About";
 import { useMediaQuery } from "@mui/material";
+import { motion } from "framer-motion";
 
 function Homepage() {
   const movibleNavWidth = useMediaQuery("(min-width:470px)");
-
 
   const imageAndCaption = [
     {
@@ -45,16 +45,28 @@ function Homepage() {
                   : { margin: "0 0 350px 0" }
               }
             >
-              <p
-                style={
-                  movibleNavWidth != true
-                    ? { fontSize: "30px" }
-                    : { fontSize: "50px" }
-                }
+              <motion.div
+                className="box"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 1,
+                  delay: 0.7,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
               >
-                {elements.caption}
-              </p>
-              <Button variant="contained">Get in Touch</Button>
+                <p
+                  style={
+                    movibleNavWidth != true
+                      ? { fontSize: "30px" }
+                      : { fontSize: "50px" }
+                  }
+                >
+                  {elements.caption}
+                </p>
+
+                <Button variant="contained">Get in Touch</Button>
+              </motion.div>
             </Carousel.Caption>
           </Carousel.Item>
         ))}
