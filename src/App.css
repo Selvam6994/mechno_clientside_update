@@ -257,7 +257,6 @@
 /* View Images */
 .viewImages{
   position: fixed;
-
   width: 100%;
   min-width: 280px;
   height: 100vh;
@@ -274,10 +273,63 @@
 
 /* footer section */
 .footer {
-  border: 2px solid green;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(0,0,0,0.9);
   margin: 100px 0 0 0;
   width: 100%;
-  height: 500px;
+  height: fit-content;
+  min-width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(252, 252, 252);
+}
+/* footer address section */
+.contactDetails{
+  width: 40%;
+  min-width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 50px;
+}
+/* under conact details div */
+.locationDiv{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ourServicesDiv{
+  width: 50%;
+  min-width: 280px;
+  margin-top: 50px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* sub div of ourservices */
+.buttonDiv{
+  width: 100%;
+  height: fit-content;
+  min-width: 280px;
+  display: flex;
+  margin: 50px 0 0 0;
+flex-wrap: wrap;
+}
+/* sib div 1 of buttonDiv */
+.servicesDiv{
+  width: 50%;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+/* sib div 2 of buttonDiv */
+.AutomationDiv{
+  width: 50%;
   min-width: 280px;
 }

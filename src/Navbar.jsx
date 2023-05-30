@@ -70,7 +70,7 @@ function Navbar() {
                 : { fontSize: "30px", margin: "0 0 0 10px" }
             }
           >
-           <span>Mechno Dream Industry</span> 
+           <span>M</span><span>echno </span>D<span>ream </span>I<span>ndustry</span> 
           </span>
         </div>
         {navOptionWidth == true ? (

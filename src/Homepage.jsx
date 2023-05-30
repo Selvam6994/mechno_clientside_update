@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import caroselImage1 from "../src/assets/Images/Carousel Images/Carosel image1.webp";
@@ -11,6 +11,12 @@ import { motion } from "framer-motion";
 
 function Homepage() {
   const movibleNavWidth = useMediaQuery("(min-width:470px)");
+
+  const ref = useRef(null);
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  };
 
   const imageAndCaption = [
     {
@@ -65,13 +71,15 @@ function Homepage() {
                   {elements.caption}
                 </p>
 
-                <Button variant="contained">Get in Touch</Button>
+                <Button variant="contained"  onClick={handleClick}>Explore</Button>
               </motion.div>
             </Carousel.Caption>
           </Carousel.Item>
         ))}
       </Carousel>
-      <About></About>
+      <div ref={ref}>
+      <About ></About>
+      </div>
     </div>
   );
 }

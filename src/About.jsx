@@ -100,11 +100,11 @@ function About() {
             elevation={16}
             style={{ borderRadius: "20px" }}
           >
-            <h1>
-              <b style={{ color: "blue" }}>About Us</b>
+            <h1 style={{ color: "blue",margin:"20px 50px 10px 50px" }}>
+              <b >About Us</b>
             </h1>
             <p>
-              <h2 style={{margin:"0 50px 0 50px"}}>
+              <h2 style={{margin:"10px 50px 10px 50px"}}>
                 Mechno Dream Industry is a Young, Efficient and Passionate
                 workstation where all your industrial dreams would be brought
                 into reality. The organization is established with the moto of
