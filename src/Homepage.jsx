@@ -10,6 +10,8 @@ import { useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 
 function Homepage() {
+
+  // Media query
   const movibleNavWidth = useMediaQuery("(min-width:470px)");
 
   const ref = useRef(null);
@@ -47,8 +49,8 @@ function Homepage() {
               className="carouselCaption"
               style={
                 movibleNavWidth == true
-                  ? { margin: "0 0 300px 0" }
-                  : { margin: "0 0 350px 0" }
+                  ? { margin: "0 0 200px 0" }
+                  : { margin: "0 0 50px 0" }
               }
             >
               <motion.div

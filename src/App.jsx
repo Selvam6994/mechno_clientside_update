@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Gallery from "./Gallery";
 import Homepage from "./Homepage";
 import Navbar from "./Navbar";
+import Contactus from "./Contactus";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="gallery" element={<Gallery />} />
+          <Route path="contact" element={<Contactus />} />
         </Routes>
         <Footer></Footer>
       </div>

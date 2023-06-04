@@ -144,50 +144,50 @@ function Gallery() {
           ))}
         </ImageList>
       </Box>
-{/* image card view */}
+      {/* image card view */}
       {imageView == true ? (
         <div className="viewImages">
-           <motion.div
-             style={{
+          <motion.div
+            style={{
               width: "35%",
               height: "650px",
               objectFit: "cover",
               borderRadius: "5%",
             }}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 0.25,
-                ease: [0, 0.71, 0.2, 1.01],
-              }}
-            >
-          <Paper
-            elevation={24}
-            style={{
-              borderRadius: "5%",
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1,
+              delay: 0.25,
+              ease: [0, 0.71, 0.2, 1.01],
             }}
           >
-            <img
-              src={imageData.img}
-              alt={imageData.title}
+            <Paper
+              elevation={24}
               style={{
-                width: "100%",
-                height: "500px",
-                objectFit: "cover",
-               borderRadius:"5% 5% 0 0",
+                borderRadius: "5%",
               }}
-            />
-            <CardContent>
-              <h4>{imageData.title}</h4>
-            </CardContent>
-            <CardActions>
-              <Button onClick={() => setImageView(false)}>
-                <ArrowBackIcon />
-                Back
-              </Button>
-            </CardActions>
-          </Paper>
+            >
+              <img
+                src={imageData.img}
+                alt={imageData.title}
+                style={{
+                  width: "100%",
+                  height: "500px",
+                  objectFit: "cover",
+                  borderRadius: "5% 5% 0 0",
+                }}
+              />
+              <CardContent>
+                <h4>{imageData.title}</h4>
+              </CardContent>
+              <CardActions>
+                <Button onClick={() => setImageView(false)}>
+                  <ArrowBackIcon />
+                  Back
+                </Button>
+              </CardActions>
+            </Paper>
           </motion.div>
         </div>
       ) : (

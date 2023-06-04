@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function Footer() {
   const socialMedia = [
@@ -27,32 +28,85 @@ function Footer() {
       link: "https://www.linkedin.com/in/mechno-dream-industry-777369191/",
     },
   ];
+
+  // Media quries for footer starts
+  const footerWidth = useMediaQuery("(min-width:1000px)");
+  const contactDetailsWidth = useMediaQuery("(min-width:435px)");
+  const fotterMinWidth = useMediaQuery("(min-width:380px)");
+  const ourServicesButtonsWidth = useMediaQuery("(min-width:1130px)");
+
+  // Media quries for footer ends
+
+  const footerIcons = {
+    fontSize: 40,
+  };
+
   return (
-    <div className="footer">
-      <div className="contactDetails">
+    <div
+      className={
+        footerWidth == true
+          ? "footer"
+          : fotterMinWidth == true
+          ? "footerMobile"
+          : "footerMinWidth "
+      }
+    >
+      <div
+        className={
+          footerWidth == true ? "contactDetails" : "contactDetailsMobile"
+        }
+      >
         <img className="logo" src={logo}></img>
-        <h1>Mechno Dream Industry</h1>
+        {contactDetailsWidth == true ? (
+          <h1>Mechno Dream Industry</h1>
+        ) : (
+          <h3>Mechno Dream Industry</h3>
+        )}
         <div className="locationDiv">
           <div>
-            <LocationOnOutlinedIcon color="warning" sx={{ fontSize: 40 }} />
+            <LocationOnOutlinedIcon color="warning" sx={footerIcons} />
           </div>
-          <div>
-            <h4>T-343,Sidco Women Industrial Estate,</h4>
-            <h4>Thirumullaivoyal,</h4>
-            <h4>Pappakuruchi Kattur,</h4>
-            <h4>Tamil Nadu 600062</h4>
-          </div>
+          {contactDetailsWidth == true ? (
+            <div>
+              <h4>Sidco Women Industrial Estate,</h4>
+              <h4>Thirumullaivoyal,</h4>
+              <h4>Pappakuruchi Kattur,</h4>
+              <h4>Tamil Nadu 600062</h4>
+            </div>
+          ) : (
+            <div>
+              <h6>Sidco Women Industrial Estate,</h6>
+              <h6>Thirumullaivoyal,</h6>
+              <h6>Pappakuruchi Kattur,</h6>
+              <h6>Tamil Nadu 600062</h6>
+            </div>
+          )}
         </div>
-        <h4>
-          <MailOutlineIcon color="warning" sx={{ fontSize: 40 }} />{" "}
-          mechnodreamindustry@gmail.com
-        </h4>
-        <h4>
-          <LocalPhoneIcon color="success" sx={{ fontSize: 40 }} />
-          +917667995898
-        </h4>
-        <Link to="/quotation">
-          {" "}
+        {contactDetailsWidth == true ? (
+          <>
+            <h4>
+              <MailOutlineIcon color="warning" sx={footerIcons} />{" "}
+              mechnodreamindustry@gmail.com
+            </h4>
+            <h4>
+              <LocalPhoneIcon color="success" sx={footerIcons} />
+              +917667995898
+            </h4>
+          </>
+        ) : (
+          <>
+            <h6>
+              <MailOutlineIcon color="warning" sx={footerIcons} />{" "}
+              mechnodreamindustry@gmail.com
+            </h6>
+            <h6>
+              <LocalPhoneIcon color="success" sx={footerIcons} />
+              +917667995898
+            </h6>
+          </>
+        )}
+
+        <Link to="/contact">
           <Button variant="contained" color="success">
             Get Quote
           </Button>
@@ -74,9 +128,13 @@ function Footer() {
       </div>
       <div className="ourServicesDiv">
         <h1>
-          <b>Our Products and Services</b>
+          <b>Our Services</b>
         </h1>
-        <div className="buttonDiv">
+        <div
+          className={
+            ourServicesButtonsWidth == true ? "buttonDiv" : "buttonDivMobile"
+          }
+        >
           <ul className="servicesDiv">
             <h2>Fabrications</h2>
             <h2>Trollys</h2>

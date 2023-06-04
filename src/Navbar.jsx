@@ -4,7 +4,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Paper from "@mui/material/Paper";
 import Navoptions from "./Navoptions";
 import Mobilenavoptions from "./Mobilenavoptions";
-import { blue } from "@mui/material/colors";
 
 function Navbar() {
   const navWidth = useMediaQuery("(min-width:920px)");
@@ -26,7 +25,7 @@ function Navbar() {
   const navBarOptions = [
     {
       option: "Home",
-      linkTo:"/"
+      linkTo: "/",
     },
     {
       option: "Services",
@@ -38,19 +37,22 @@ function Navbar() {
     },
     {
       option: "Gallery",
-      linkTo:"gallery"
+      linkTo: "gallery",
     },
     {
       option: "Contact Us",
-      linkTo:"contact"
+      linkTo: "contact",
     },
   ];
+
+  const logoFirstLetter = { color: "rgb(0 116 248)" };
+  const logoLetter = { color: "rgb(61 61 61)" };
 
   return (
     <>
       <Paper
         className="navBar"
-        elevation={12}
+        elevation={24}
         style={
           movibleNavWidth != true
             ? { backgroundColor: "rgba(255,255,255,0.2)", height: "200px" }
@@ -63,15 +65,20 @@ function Navbar() {
             alt="Icon"
             style={navWidth == true ? { width: "80px" } : { width: "50px" }}
           />
-          <span
+          <div
             style={
               navWidth == true
                 ? { fontSize: "40px", margin: "0 0 0 10px" }
                 : { fontSize: "30px", margin: "0 0 0 10px" }
             }
           >
-           <span>M</span><span>echno </span>D<span>ream </span>I<span>ndustry</span> 
-          </span>
+            <span style={logoFirstLetter}>M</span>
+            <span style={logoLetter}>echno </span>
+            <span style={logoFirstLetter}>D</span>
+            <span style={logoLetter}>ream </span>
+            <span style={logoFirstLetter}>I</span>
+            <span style={logoLetter}>ndustry</span>
+          </div>
         </div>
         {navOptionWidth == true ? (
           <Navoptions options={navBarOptions}></Navoptions>

@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import client1 from "../src/assets/Images/company icons/BONFIGLIOLI.png";
 import client2 from "../src/assets/Images/company icons/ELFORGE.png";
 import client3 from "../src/assets/Images/company icons/hyundai transys.png";
 import client4 from "../src/assets/Images/company icons/Essae.png";
 import client5 from "../src/assets/Images/company icons/Fives.png";
-
 import client7 from "../src/assets/Images/company icons/Malles.png";
 import client8 from "../src/assets/Images/company icons/Neel Metal.png";
 import client9 from "../src/assets/Images/company icons/Novares.png";
@@ -18,6 +18,12 @@ import client16 from "../src/assets/Images/company icons/Bgrneo.png";
 import { Paper } from "@mui/material";
 
 function About() {
+
+
+  // Media query
+  const visionMissonWidth = useMediaQuery("(min-width:740px)");
+
+
   // for about section transition
   const [transition, setTransition] = useState(0);
 
@@ -115,7 +121,7 @@ function About() {
             </p>
           </Paper>
 
-          <div className="vissionMissonSection">
+          <div className={visionMissonWidth==true?"vissionMissonSection":"vissionMissonMobile "}>
             <Paper
               elevation={16}
               className="vision"
