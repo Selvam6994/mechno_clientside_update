@@ -29,10 +29,9 @@ function Contactus() {
   const contactPageContentWidth = useMediaQuery("(min-width:910px)");
   const quotationSectionWidth = useMediaQuery("(min-width:1330px)");
 
-  const [form, setForm] = useState(false);
   const [formMessage, setFormMessage] = useState(false);
   const [loading, setLoading] = useState(false);
-  const detailsSectionWidth = useMediaQuery("(min-width:1200px)");
+
 
   const navigate = useNavigate();
 
@@ -61,7 +60,7 @@ function Contactus() {
         const data = new FormData();
         data.append("file", values.file);
         const uploadFile = await fetch(
-          `https://mechno-site-api.onrender.com/upload`,
+          `https://mechno-apis.vercel.app/upload`,
           {
             method: "POST",
             headers: new Headers({ Accept: "application/json" }),
@@ -76,7 +75,7 @@ function Contactus() {
           console.log("failed");
         }
         const sendData = await fetch(
-          `https://mechno-site-api.onrender.com/attachmentemail`,
+          `https://mechno-apis.vercel.app/attachmentemail`,
           {
             method: "POST",
             headers: { "Content-type": "application/json" },
@@ -87,13 +86,10 @@ function Contactus() {
           const result = await sendData.json();
           setFormMessage(true);
           setLoading(false);
-          console.log("success");
-        } else {
-          console.log("failed");
-        }
+        } 
       } else {
         const sendData = await fetch(
-          `https://mechno-site-api.onrender.com/onlymail`,
+          `https://mechno-apis.vercel.app/onlymail`,
           {
             method: "POST",
             headers: { "Content-type": "application/json" },
@@ -179,7 +175,11 @@ function Contactus() {
           </div>
         </div>
         <div className="quotationSection">
-          <div className={quotationSectionWidth==true?"textArea":"textAreaMobile"}>
+          <div
+            className={
+              quotationSectionWidth == true ? "textArea" : "textAreaMobile"
+            }
+          >
             <span>Need quotation?</span>
             <span>Drop a message here!</span>
             <span>Note : Have more than one file to attach?</span>
@@ -277,7 +277,6 @@ function Contactus() {
                                 id="standard-size-normal"
                                 size="small"
                                 name="otheroption"
-                                focused
                                 onChange={formik_email.handleChange}
                               />
                             </FormControl>
@@ -315,7 +314,6 @@ function Contactus() {
                               id="standard-size-normal"
                               size="small"
                               name="companyname"
-                              focused
                               onChange={formik_email.handleChange}
                               onBlur={formik_email.handleBlur}
                             />
@@ -347,7 +345,6 @@ function Contactus() {
                               variant="standard"
                               placeholder="Your name"
                               id="standard-size-normal"
-                              focused
                               size="small"
                               name="name"
                               onChange={formik_email.handleChange}
@@ -381,7 +378,6 @@ function Contactus() {
                               variant="standard"
                               placeholder="Your email address"
                               id="standard-size-normal"
-                              focused
                               size="small"
                               name="email"
                               onChange={formik_email.handleChange}
@@ -415,7 +411,6 @@ function Contactus() {
                               variant="standard"
                               placeholder="Your contact number"
                               id="standard-size-normal"
-                              focused
                               size="small"
                               name="phone"
                               onChange={formik_email.handleChange}
@@ -436,7 +431,6 @@ function Contactus() {
                         <TextField
                           variant="standard"
                           id="standard-size-normal"
-                          focused
                           label={
                             formik_email.touched.message &&
                             formik_email.errors.message ? (
@@ -481,82 +475,82 @@ function Contactus() {
                       </FormControl>
                     </motion.div>
                     {/* form text fiels ends */}
-                    <div style={{display:"flex",justifyContent:"center"}}>
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      onClick={() => {
-                        formik_email.values.companyname &&
-                        formik_email.values.name &&
-                        formik_email.values.email &&
-                        formik_email.values.phone &&
-                        formik_email.values.message != ""
-                          ? setLoading(true)
-                          : setLoading(false);
-                      }}
-                      disabled={loading != true ? false : true}
-                    >
-                      {loading != true ? "Send" : "Please Wait..."}
-                    </Button>
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        onClick={() => {
+                          formik_email.values.companyname &&
+                          formik_email.values.name &&
+                          formik_email.values.email &&
+                          formik_email.values.phone &&
+                          formik_email.values.message != ""
+                            ? setLoading(true)
+                            : setLoading(false);
+                        }}
+                        disabled={loading != true ? false : true}
+                      >
+                        {loading != true ? "Send" : "Please Wait..."}
+                      </Button>
                     </div>
                   </div>
                 </Box>
               ) : (
                 <motion.div
-                className="emailButtonForm"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.3,
-                  ease: [0, 0.71, 0.2, 1.01],
-                  scale: {
-                    type: "spring",
-                    damping: 10,
-                    stiffness: 100,
-                    restDelta: 0.001,
-                  },
-                }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    "& > :not(style)": {
-                      m: 1,
-                      minWidth: 280,
-                      height: "300px",
+                  className="emailButtonForm"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    ease: [0, 0.71, 0.2, 1.01],
+                    scale: {
+                      type: "spring",
+                      damping: 10,
+                      stiffness: 100,
+                      restDelta: 0.001,
                     },
                   }}
                 >
-                  <Paper
-                    className="emailStatus"
-                    elevation={16}
-                    style={{
-                      color: "rgb(61, 61, 61)",
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      "& > :not(style)": {
+                        m: 1,
+                        minWidth: 280,
+                        height: "300px",
+                      },
                     }}
                   >
-                    <h3>
-                      We received your mail, our team will get back to you
-                      soon.
-                    </h3>
-                    <div style={{display:"flex",justifyContent:"center"}}>
-                    <Button
-                      variant="contained"
-                      color="error"
-                      onClick={() => {
-                        navigate("/");
-                        setFormMessage(false);
-                        setForm(false);
+                    <Paper
+                      className="emailStatus"
+                      elevation={16}
+                      style={{
+                        color: "rgb(61, 61, 61)",
                       }}
                     >
-                      Back
-                    </Button>
-                    </div>
-                  </Paper>
-                </Box>
-              </motion.div>
+                      <h3>
+                        We received your mail, our team will get back to you
+                        soon.
+                      </h3>
+                      <div
+                        style={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <Button
+                          variant="contained"
+                          color="error"
+                          onClick={() => {
+                            navigate("/");
+                            setFormMessage(false);
+                          }}
+                        >
+                          Back
+                        </Button>
+                      </div>
+                    </Paper>
+                  </Box>
+                </motion.div>
               )}
-             
             </form>
           </div>
         </div>

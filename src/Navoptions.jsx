@@ -10,7 +10,7 @@ function Navoptions({ options }) {
 
   //   nav buttons style.
   const navOptionStyle = {
-    width: "200px",
+    width: "150px",
     fontFamily: "Dosis",
     fontSize: "15px",
   };
@@ -20,22 +20,22 @@ function Navoptions({ options }) {
     {
       name: "Fabrication",
       delay: 0.1,
-      linkTo:"fabrications"
+      linkTo: "fabrications",
     },
     {
       name: "Trollys",
       delay: 0.2,
-      linkTo:"trollys"
+      linkTo: "trollys",
     },
     {
       name: "Jigs And Fixtures",
       delay: 0.3,
-      linkTo:"jigsandfixtures"
+      linkTo: "jigsandfixtures",
     },
     {
       name: "Safety Fencing",
       delay: 0.4,
-      linkTo:"safetyfencing"
+      linkTo: "safetyfencing",
     },
   ];
 
@@ -44,98 +44,100 @@ function Navoptions({ options }) {
     {
       name: "Conveyors",
       delay: 0.1,
-      linkTo:"conveyors"
+      linkTo: "conveyors",
     },
     {
       name: "Robotics",
       delay: 0.2,
-      linkTo:"robotics"
+      linkTo: "robotics",
     },
     {
       name: "Panel Design",
       delay: 0.3,
-      linkTo:"paneldesign"
+      linkTo: "paneldesign",
     },
   ];
   return (
     <div className="navOptions">
       {options.map((name) => (
-       <Link to={name.linkTo}> <Fab
-          variant="extended"
-          style={navOptionStyle}
-          onMouseEnter={
-            name.subOption == "service"
-              ? () => setServiceMenu(true)
-              : name.subOption == "automation"
-              ? () => setAutomationMenu(true)
-              : ""
-          }
-          onMouseLeave={
-            name.subOption == "service"
-              ? () => setServiceMenu(false)
-              : name.subOption == "automation"
-              ? () => setAutomationMenu(false)
-              : ""
-          }
-        >
-          {name.subOption === "service" ? (
-            <KeyboardArrowDownIcon />
-          ) : name.subOption === "automation" ? (
-            <KeyboardArrowDownIcon />
-          ) : (
-            ""
-          )}
-          {name.option}
-          {name.subOption === "service" ? (
-            serviceMenu == true ? (
-              <div className="serviceMenu">
-                {serviceMenuOptions.map((subOption) => (
-                  <motion.div
-                    className="box"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: subOption.delay,
-                      ease: [0, 0.71, 0.2, 1.01],
-                    }}
-                  >
-                    <Button variant="contained" style={{ width: "150px" }}>
-                      {subOption.name}
-                    </Button>
-                  </motion.div>
-                ))}
-              </div>
+        <Link to={name.linkTo}>
+          {" "}
+          <Fab
+            variant="extended"
+            style={navOptionStyle}
+            onMouseEnter={
+              name.subOption == "service"
+                ? () => setServiceMenu(true)
+                : name.subOption == "automation"
+                ? () => setAutomationMenu(true)
+                : ""
+            }
+            onMouseLeave={
+              name.subOption == "service"
+                ? () => setServiceMenu(false)
+                : name.subOption == "automation"
+                ? () => setAutomationMenu(false)
+                : ""
+            }
+          >
+            {name.subOption === "service" ? (
+              <KeyboardArrowDownIcon />
+            ) : name.subOption === "automation" ? (
+              <KeyboardArrowDownIcon />
             ) : (
               ""
-            )
-          ) : name.subOption === "automation" ? (
-            automationMenu == true ? (
-              <div className="automationMenu">
-                {automationMenuOptions.map((subOption) => (
-                  <motion.div
-                    className="box"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: subOption.delay,
-                      ease: [0, 0.71, 0.2, 1.01],
-                    }}
-                  >
-                    <Button variant="contained" style={{ width: "150px" }}>
-                      {subOption.name}
-                    </Button>
-                  </motion.div>
-                ))}
-              </div>
+            )}
+            {name.option}
+            {name.subOption === "service" ? (
+              serviceMenu == true ? (
+                <div className="serviceMenu">
+                  {serviceMenuOptions.map((subOption) => (
+                    <motion.div
+                      className="box"
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        duration: 0.8,
+                        delay: subOption.delay,
+                        ease: [0, 0.71, 0.2, 1.01],
+                      }}
+                    >
+                      <Button variant="contained" style={{ width: "150px" }}>
+                        {subOption.name}
+                      </Button>
+                    </motion.div>
+                  ))}
+                </div>
+              ) : (
+                ""
+              )
+            ) : name.subOption === "automation" ? (
+              automationMenu == true ? (
+                <div className="automationMenu">
+                  {automationMenuOptions.map((subOption) => (
+                    <motion.div
+                      className="box"
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        duration: 0.8,
+                        delay: subOption.delay,
+                        ease: [0, 0.71, 0.2, 1.01],
+                      }}
+                    >
+                      <Button variant="contained" style={{ width: "150px" }}>
+                        {subOption.name}
+                      </Button>
+                    </motion.div>
+                  ))}
+                </div>
+              ) : (
+                ""
+              )
             ) : (
               ""
-            )
-          ) : (
-            ""
-          )}
-        </Fab>
+            )}
+          </Fab>
         </Link>
       ))}
     </div>

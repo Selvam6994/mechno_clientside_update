@@ -515,19 +515,7 @@
 .textAreaMobile span:nth-child(4) {
   font-size: 25px;
 }
-/* details section in mobile view */
-/* .detailsMobile {
-  .details {
-    border: 5px solid purple;
-    display: flex;
-    width: 50%;
-    min-width: 280px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-} */
+
 /* entire form section */
 .formSection {
   /* border: 5px solid rgb(85, 0, 255); */
