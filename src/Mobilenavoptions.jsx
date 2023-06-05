@@ -16,7 +16,7 @@ function Mobilenavoptions() {
     {
       option: "Home",
       delay: 0.1,
-      linkTo:"/"
+      linkTo: "/",
     },
     {
       option: "Services",
@@ -31,12 +31,12 @@ function Mobilenavoptions() {
     {
       option: "Gallery",
       delay: 0.4,
-      linkTo:"gallery"
+      linkTo: "gallery",
     },
     {
       option: "Contact Us",
       delay: 0.5,
-      linkTo:"contact"
+      linkTo: "contact",
     },
   ];
 
@@ -98,32 +98,41 @@ function Mobilenavoptions() {
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
               >
-                <Link to={name.linkTo} ><Button
-                  variant="contained"
-                  style={{ width: "150px" }}
-                  onMouseEnter={
-                    name.subOption === "service"
-                      ? () => setServiceSubMenu(true)
-                      : name.subOption === "automation"
-                      ? () => setAutomationSubMenu(true)
-                      : ""
-                  }
-                  onMouseLeave={
-                    name.subOption === "service"
-                      ? () => setServiceSubMenu(false)
-                      : name.subOption === "automation"
-                      ? () => setAutomationSubMenu(false)
-                      : ""
-                  }
-                >
-                  {name.subOption === "service" ||
-                  name.subOption === "automation" ? (
-                    <ArrowBackIosIcon />
-                  ) : (
-                    ""
-                  )}
-                  {name.option}
-                </Button>
+                <Link to={name.linkTo}>
+                  <Button
+                    variant="contained"
+                    style={{ width: "150px" }}
+                    onMouseEnter={
+                      name.subOption === "service"
+                        ? () => setServiceSubMenu(true)
+                        : name.subOption === "automation"
+                        ? () => setAutomationSubMenu(true)
+                        : ""
+                    }
+                    onMouseLeave={
+                      name.subOption === "service"
+                        ? () => setServiceSubMenu(false)
+                        : name.subOption === "automation"
+                        ? () => setAutomationSubMenu(false)
+                        : ""
+                    }
+                    onClick={() => {
+                      {
+                        name.subOption === "service" ||
+                        name.subOption === "automation"
+                          ? setMenuIcon(true)
+                          : setMenuIcon(false);
+                      }
+                    }}
+                  >
+                    {name.subOption === "service" ||
+                    name.subOption === "automation" ? (
+                      <ArrowBackIosIcon />
+                    ) : (
+                      ""
+                    )}
+                    {name.option}
+                  </Button>
                 </Link>
               </motion.div>
             ))}
