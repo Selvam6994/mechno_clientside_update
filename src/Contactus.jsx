@@ -25,7 +25,7 @@ import { green, orange, pink, red } from "@mui/material/colors";
 
 function Contactus() {
   // Media query
-  const contactSetionWidth = useMediaQuery("(min-width:645px)");
+  // const contactSetionWidth = useMediaQuery("(min-width:645px)");
   const contactPageContentWidth = useMediaQuery("(min-width:910px)");
   const quotationSectionWidth = useMediaQuery("(min-width:1330px)");
 
@@ -179,7 +179,7 @@ function Contactus() {
           </div>
         </div>
         <div className="quotationSection">
-          <div className="textArea">
+          <div className={quotationSectionWidth==true?"textArea":"textAreaMobile"}>
             <span>Need quotation?</span>
             <span>Drop a message here!</span>
             <span>Note : Have more than one file to attach?</span>
@@ -481,6 +481,7 @@ function Contactus() {
                       </FormControl>
                     </motion.div>
                     {/* form text fiels ends */}
+                    <div style={{display:"flex",justifyContent:"center"}}>
                     <Button
                       type="submit"
                       variant="contained"
@@ -497,61 +498,65 @@ function Contactus() {
                     >
                       {loading != true ? "Send" : "Please Wait..."}
                     </Button>
+                    </div>
                   </div>
                 </Box>
               ) : (
                 <motion.div
-                  className="emailButtonForm"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.3,
-                    ease: [0, 0.71, 0.2, 1.01],
-                    scale: {
-                      type: "spring",
-                      damping: 10,
-                      stiffness: 100,
-                      restDelta: 0.001,
+                className="emailButtonForm"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: "spring",
+                    damping: 10,
+                    stiffness: 100,
+                    restDelta: 0.001,
+                  },
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    "& > :not(style)": {
+                      m: 1,
+                      minWidth: 280,
+                      height: "300px",
                     },
                   }}
                 >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      "& > :not(style)": {
-                        m: 1,
-                        minWidth: 280,
-                        height: "300px",
-                      },
+                  <Paper
+                    className="emailStatus"
+                    elevation={16}
+                    style={{
+                      color: "rgb(61, 61, 61)",
                     }}
                   >
-                    <Paper
-                      className="emailStatus"
-                      elevation={16}
-                      style={{
-                        color: "rgb(61, 61, 61)",
+                    <h3>
+                      We received your mail, our team will get back to you
+                      soon.
+                    </h3>
+                    <div style={{display:"flex",justifyContent:"center"}}>
+                    <Button
+                      variant="contained"
+                      color="error"
+                      onClick={() => {
+                        navigate("/");
+                        setFormMessage(false);
+                        setForm(false);
                       }}
                     >
-                      <h3>
-                        We received your mail, our team will get back to you
-                        soon.
-                      </h3>
-                      <Button
-                        variant="contained"
-                        color="error"
-                        onClick={() => {
-                          navigate("/");
-                          setFormMessage(false);
-                          setForm(false);
-                        }}
-                      >
-                        Back
-                      </Button>
-                    </Paper>
-                  </Box>
-                </motion.div>
+                      Back
+                    </Button>
+                    </div>
+                  </Paper>
+                </Box>
+              </motion.div>
               )}
+             
             </form>
           </div>
         </div>
