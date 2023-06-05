@@ -29,9 +29,10 @@ function Contactus() {
   const contactPageContentWidth = useMediaQuery("(min-width:910px)");
   const quotationSectionWidth = useMediaQuery("(min-width:1330px)");
 
+  const [form, setForm] = useState(false);
   const [formMessage, setFormMessage] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const detailsSectionWidth = useMediaQuery("(min-width:1200px)");
 
   const navigate = useNavigate();
 
@@ -86,7 +87,10 @@ function Contactus() {
           const result = await sendData.json();
           setFormMessage(true);
           setLoading(false);
-        } 
+          console.log("success");
+        } else {
+          console.log("failed");
+        }
       } else {
         const sendData = await fetch(
           `https://mechno-apis.vercel.app/onlymail`,
@@ -542,6 +546,7 @@ function Contactus() {
                           onClick={() => {
                             navigate("/");
                             setFormMessage(false);
+                            setForm(false);
                           }}
                         >
                           Back
