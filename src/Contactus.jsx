@@ -62,6 +62,7 @@ function Contactus() {
         data.append("file", values.file);
         const uploadFile = await fetch(
           `https://mechno-apis.vercel.app/upload`,
+          // "http://localhost:4000/upload",
           {
             method: "POST",
             headers: new Headers({ Accept: "application/json" }),
@@ -77,6 +78,7 @@ function Contactus() {
         }
         const sendData = await fetch(
           `https://mechno-apis.vercel.app/attachmentemail`,
+          // "http://localhost:4000/attachmentemail",
           {
             method: "POST",
             headers: { "Content-type": "application/json" },
@@ -94,6 +96,7 @@ function Contactus() {
       } else {
         const sendData = await fetch(
           `https://mechno-apis.vercel.app/onlymail`,
+          // "http://localhost:4000/textmail",
           {
             method: "POST",
             headers: { "Content-type": "application/json" },
@@ -110,6 +113,13 @@ function Contactus() {
       }
     },
   });
+  
+    // const restData = async () =>
+    //  {const rawData= await fetch("https://restcountries.com/v3.1/all", { method: "GET" });
+    // const jsonData =await rawData.json();
+    // console.log(jsonData)}
+    // restData()
+  
 
   return (
     <div className="contactUsPage">
@@ -270,7 +280,6 @@ function Contactus() {
                         >
                           <Paper
                             sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                            className="emailUsFormPaper"
                           >
                             <FormControl fullWidth sx={{ m: 0 }}>
                               <TextField
@@ -298,7 +307,6 @@ function Contactus() {
                       >
                         <Paper
                           sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                          className="emailUsFormPaper"
                         >
                           <FormControl fullWidth sx={{ m: 0 }}>
                             <TextField
@@ -331,7 +339,6 @@ function Contactus() {
                       >
                         <Paper
                           sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                          className="emailUsFormPaper"
                         >
                           <FormControl fullWidth sx={{ m: 0 }}>
                             <TextField
@@ -364,7 +371,6 @@ function Contactus() {
                       >
                         <Paper
                           sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                          className="emailUsFormPaper"
                         >
                           <FormControl fullWidth sx={{ m: 0 }}>
                             <TextField
@@ -397,7 +403,6 @@ function Contactus() {
                       >
                         <Paper
                           sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                          className="emailUsFormPaper"
                         >
                           <FormControl fullWidth sx={{ m: 0 }}>
                             <TextField
@@ -479,24 +484,24 @@ function Contactus() {
                       </FormControl>
                     </motion.div>
                     {/* form text fiels ends */}
-                    <div style={{ display: "flex", justifyContent: "center" }}>
-                      <Button
-                        type="submit"
-                        variant="contained"
-                        onClick={() => {
-                          formik_email.values.companyname &&
-                          formik_email.values.name &&
-                          formik_email.values.email &&
-                          formik_email.values.phone &&
-                          formik_email.values.message != ""
-                            ? setLoading(true)
-                            : setLoading(false);
-                        }}
-                        disabled={loading != true ? false : true}
-                      >
-                        {loading != true ? "Send" : "Please Wait..."}
-                      </Button>
-                    </div>
+
+                    <Button
+                      style={{ display: "flex", justifyContent: "center" }}
+                      type="submit"
+                      variant="contained"
+                      onClick={() => {
+                        formik_email.values.companyname &&
+                        formik_email.values.name &&
+                        formik_email.values.email &&
+                        formik_email.values.phone &&
+                        formik_email.values.message != ""
+                          ? setLoading(true)
+                          : setLoading(false);
+                      }}
+                      disabled={loading != true ? false : true}
+                    >
+                      {loading != true ? "Send" : "Please Wait..."}
+                    </Button>
                   </div>
                 </Box>
               ) : (
