@@ -5,6 +5,8 @@ import Gallery from "./Gallery";
 import Homepage from "./Homepage";
 import Navbar from "./Navbar";
 import Contactus from "./Contactus";
+import Fabrications from "./Fabrications";
+import IndustrialServices from "./IndustrialServices";
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="contact" element={<Contactus />} />
+          <Route path="industrialservices" element={<IndustrialServices />} />
+          <Route path="automationservices" element={<IndustrialServices />} />
+          <Route path="fabrications" element={<Fabrications />} />
         </Routes>
         <Footer></Footer>
       </div>

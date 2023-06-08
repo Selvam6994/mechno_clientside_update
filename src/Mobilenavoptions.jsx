@@ -43,20 +43,34 @@ function Mobilenavoptions() {
   //   service sub menu
   const serviceSubMenu = [
     {
-      name: "Fabrication",
+      name: "Enclosure",
       delay: 0.1,
-    },
-    {
-      name: "Trollys",
-      delay: 0.2,
+      linkTo:"industrialservices/enclosures"
     },
     {
       name: "Jigs And Fixtures",
+      delay: 0.2,
+      linkTo:"industrialservices/jigs_and_fixtures"
+    },
+    {
+      name: "Pallets",
       delay: 0.3,
+      linkTo:"industrialservices/pallets"
     },
     {
       name: "Safety Fencing",
       delay: 0.4,
+      linkTo:"industrialservices/safetyfencing"
+    },
+    {
+      name: "Trolleys",
+      delay: 0.5,
+      linkTo:"industrialservices/trolleys"
+    },  
+    {
+      name: "Work Stations",
+      delay: 0.6,
+      linkTo:"industrialservices/workstations"
     },
   ];
 

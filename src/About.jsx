@@ -15,15 +15,15 @@ import client13 from "../src/assets/Images/company icons/Wia.png";
 import client14 from "../src/assets/Images/company icons/NewTech.png";
 import client15 from "../src/assets/Images/company icons/Alison.png";
 import client16 from "../src/assets/Images/company icons/Bgrneo.png";
+import industrialServices from "../src/assets/Images/Industrial services/Fabrications.jpg";
+import automationServices from "../src/assets/Images/Automation Services/Automation.webp";
 import { Paper } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function About() {
-
-
   // Media query
   const visionMissonWidth = useMediaQuery("(min-width:740px)");
-
-
+  const ourServicesWidth = useMediaQuery("(min-width:960px)");
   // for about section transition
   const [transition, setTransition] = useState(0);
 
@@ -37,75 +37,88 @@ function About() {
   const clientLogos = [
     {
       image: client1,
-      width:"50%",
-      height:"60%"
+      width: "50%",
+      height: "60%",
     },
     {
       image: client4,
-      width:"50%",
-      height:"50%"
+      width: "50%",
+      height: "50%",
     },
     {
       image: client5,
-      width:"50%",
-      height:"70%"
+      width: "50%",
+      height: "70%",
     },
     {
       image: client7,
-      width:"50%",
-      height:"50%"
+      width: "50%",
+      height: "50%",
     },
     {
       image: client8,
-      width:"30%",
-      height:"50%"
+      width: "30%",
+      height: "50%",
     },
     {
       image: client9,
-      width:"50%",
-      height:"50%"
+      width: "50%",
+      height: "50%",
     },
     {
       image: client10,
-      width:"50%",
-      height:"50%"
+      width: "50%",
+      height: "50%",
     },
     {
       image: client12,
-      width:"50%",
-      height:"50%"
+      width: "50%",
+      height: "50%",
     },
     {
       image: client13,
-      width:"50%",
-      height:"30%"
+      width: "50%",
+      height: "30%",
     },
     {
       image: client14,
-      width:"30%",
-      height:"80%"
+      width: "30%",
+      height: "80%",
     },
     {
       image: client15,
-      width:"50%",
-      height:"70%"
+      width: "50%",
+      height: "70%",
     },
     {
       image: client16,
-      width:"50%",
-      height:"40%"
+      width: "50%",
+      height: "40%",
     },
     {
       image: client2,
-      width:"30%",
-      height:"80%"
+      width: "30%",
+      height: "80%",
     },
     {
       image: client3,
-      width:"50%",
-      height:"40%"
+      width: "50%",
+      height: "40%",
     },
   ];
+
+  const ourServices = [
+    {
+      image:industrialServices,
+      serviceName:"Industrial Services",
+      linkTo:"industrialservices"
+    },
+    {
+      image:automationServices,
+      serviceName:"Automation Services",
+      linkTo:"automationservices"
+    }
+  ]
 
   const [width, setWidth] = useState(0);
 
@@ -117,6 +130,36 @@ function About() {
 
   return (
     <div>
+      <motion.div
+        className="clientCarousel"
+        whileTap={{ cursor: "grabbing" }}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <motion.div
+          ref={carousel}
+          className="innerCarousel"
+          drag="x"
+          dragConstraints={{ right: 0, left: -width }}
+        >
+          {clientLogos.map((logo) => {
+            return (
+              <motion.div className="item" whileTap={{ cursor: "grabbing" }}>
+                <img
+                  src={logo.image}
+                  alt="client images"
+                  style={{ width: logo.width, height: logo.height }}
+                ></img>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </motion.div>
       {transition == true ? (
         <motion.div
           className="aboutUs"
@@ -134,11 +177,11 @@ function About() {
             elevation={16}
             style={{ borderRadius: "20px" }}
           >
-            <h1 style={{ color: "blue",margin:"20px 50px 10px 50px" }}>
-              <b >About Us</b>
+            <h1 style={{ color: "blue", margin: "20px 50px 10px 50px" }}>
+              <b>About Us</b>
             </h1>
             <p>
-              <h2 style={{margin:"10px 50px 10px 50px"}}>
+              <h2 style={{ margin: "10px 50px 10px 50px" }}>
                 Mechno Dream Industry is a Young, Efficient and Passionate
                 workstation where all your industrial dreams would be brought
                 into reality. The organization is established with the moto of
@@ -149,7 +192,13 @@ function About() {
             </p>
           </Paper>
 
-          <div className={visionMissonWidth==true?"vissionMissonSection":"vissionMissonMobile "}>
+          <div
+            className={
+              visionMissonWidth == true
+                ? "vissionMissonSection"
+                : "vissionMissonMobile "
+            }
+          >
             <Paper
               elevation={16}
               className="vision"
@@ -212,32 +261,33 @@ function About() {
       ) : (
         ""
       )}
-      <motion.div
-        className="clientCarousel"
-        whileTap={{ cursor: "grabbing" }}
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      >
-        <motion.div
-          ref={carousel}
-          className="innerCarousel"
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-        >
-          {clientLogos.map((logo) => {
-            return (
-              <motion.div className="item" whileTap={{ cursor: "grabbing" }}>
-                <img src={logo.image} alt="client images" style={{width:logo.width,height:logo.height}}></img>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </motion.div>
+      <div className="ourServices">
+        <div className="titleDiv">
+          <h2>Our Services</h2>
+        </div>
+        <div className={ourServicesWidth==true? "servicesCardSection":"servicesCardSectionMobile"}>
+         { ourServices.map((service)=>(<div className="imageCardAndTitle">
+            <Link to={service.linkTo}>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Paper
+                className="imageCard"
+                elevation={16}
+                sx={{
+                  borderRadius: "5%",
+                }}
+              >
+                <img src={service.image} alt={service.serviceName} />
+                <div className="hoverEffectDiv"></div>
+              </Paper>
+            </motion.div>
+            </Link>
+            <h3>{service.serviceName}</h3>
+          </div>))}
+        </div>
+      </div>
     </div>
   );
 }

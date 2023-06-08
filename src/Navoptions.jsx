@@ -19,24 +19,34 @@ function Navoptions({ options }) {
   //Services  Sub menu options
   const serviceMenuOptions = [
     {
-      name: "Fabrication",
+      name: "Enclosure",
       delay: 0.1,
-      linkTo: "fabrications",
-    },
-    {
-      name: "Trollys",
-      delay: 0.2,
-      linkTo: "trollys",
+      linkTo:"industrialservices/enclosures"
     },
     {
       name: "Jigs And Fixtures",
+      delay: 0.2,
+      linkTo:"industrialservices/jigs_and_fixtures"
+    },
+    {
+      name: "Pallets",
       delay: 0.3,
-      linkTo: "jigsandfixtures",
+      linkTo:"industrialservices/pallets"
     },
     {
       name: "Safety Fencing",
       delay: 0.4,
-      linkTo: "safetyfencing",
+      linkTo:"industrialservices/safetyfencing"
+    },
+    {
+      name: "Trolleys",
+      delay: 0.5,
+      linkTo:"industrialservices/trolleys"
+    },  
+    {
+      name: "Work Stations",
+      delay: 0.6,
+      linkTo:"industrialservices/workstations"
     },
   ];
 
@@ -105,9 +115,11 @@ function Navoptions({ options }) {
                         ease: [0, 0.71, 0.2, 1.01],
                       }}
                     >
+                      <Link to={subOption.linkTo}>
                       <Button variant="contained" style={{ width: "150px" }}>
                         {subOption.name}
                       </Button>
+                      </Link>
                     </motion.div>
                   ))}
                 </div>
@@ -128,9 +140,11 @@ function Navoptions({ options }) {
                         ease: [0, 0.71, 0.2, 1.01],
                       }}
                     >
+                       <Link to={subOption.linkTo}>
                       <Button variant="contained" style={{ width: "150px" }}>
                         {subOption.name}
                       </Button>
+                      </Link>
                     </motion.div>
                   ))}
                 </div>
