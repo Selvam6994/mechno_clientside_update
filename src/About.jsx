@@ -37,45 +37,73 @@ function About() {
   const clientLogos = [
     {
       image: client1,
+      width:"50%",
+      height:"60%"
     },
     {
       image: client4,
+      width:"50%",
+      height:"50%"
     },
     {
       image: client5,
+      width:"50%",
+      height:"70%"
     },
     {
       image: client7,
+      width:"50%",
+      height:"50%"
     },
     {
       image: client8,
+      width:"30%",
+      height:"50%"
     },
     {
       image: client9,
+      width:"50%",
+      height:"50%"
     },
     {
       image: client10,
+      width:"50%",
+      height:"50%"
     },
     {
       image: client12,
+      width:"50%",
+      height:"50%"
     },
     {
       image: client13,
+      width:"50%",
+      height:"30%"
     },
     {
       image: client14,
+      width:"30%",
+      height:"80%"
     },
     {
       image: client15,
+      width:"50%",
+      height:"70%"
     },
     {
       image: client16,
+      width:"50%",
+      height:"40%"
     },
     {
       image: client2,
+      width:"30%",
+      height:"80%"
     },
     {
       image: client3,
+      width:"50%",
+      height:"40%"
     },
   ];
 
@@ -204,7 +232,7 @@ function About() {
           {clientLogos.map((logo) => {
             return (
               <motion.div className="item" whileTap={{ cursor: "grabbing" }}>
-                <img src={logo.image} alt=""></img>
+                <img src={logo.image} alt="client images" style={{width:logo.width,height:logo.height}}></img>
               </motion.div>
             );
           })}

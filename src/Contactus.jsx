@@ -9,19 +9,13 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import {
-  FilledInput,
-  FormControl,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
-  useMediaQuery,
-} from "@mui/material";
+import { FormControl, useMediaQuery } from "@mui/material";
 import contactBgImage from "./assets/Images/Background/Comtact Us Image.jpg";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { green, orange, pink, red } from "@mui/material/colors";
+import { api } from "./global";
 
 function Contactus() {
   // Media query
@@ -57,18 +51,15 @@ function Contactus() {
     }),
 
     onSubmit: async (values) => {
+      setLoading(true);
       if (formik_email.values.file != "") {
         const data = new FormData();
         data.append("file", values.file);
-        const uploadFile = await fetch(
-          `https://mechno-apis.vercel.app/upload`,
-          // "http://localhost:4000/upload",
-          {
-            method: "POST",
-            headers: new Headers({ Accept: "application/json" }),
-            body: data,
-          }
-        );
+        const uploadFile = await fetch(`${api}/upload`, {
+          method: "POST",
+          headers: new Headers({ Accept: "application/json" }),
+          body: data,
+        });
         if (uploadFile.status == 200) {
           const result = await uploadFile.json();
 
@@ -76,15 +67,11 @@ function Contactus() {
         } else {
           console.log("failed");
         }
-        const sendData = await fetch(
-          `https://mechno-apis.vercel.app/attachmentemail`,
-          // "http://localhost:4000/attachmentemail",
-          {
-            method: "POST",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify(values),
-          }
-        );
+        const sendData = await fetch(`${api}/attachmentemail`, {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify(values),
+        });
         if (sendData.status == 200) {
           const result = await sendData.json();
           setFormMessage(true);
@@ -94,15 +81,11 @@ function Contactus() {
           console.log("failed");
         }
       } else {
-        const sendData = await fetch(
-          `https://mechno-apis.vercel.app/onlymail`,
-          // "http://localhost:4000/textmail",
-          {
-            method: "POST",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify(values),
-          }
-        );
+        const sendData = await fetch(`${api}/onlymail`, {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify(values),
+        });
         if (sendData.status == 200) {
           const result = await sendData.json();
           setFormMessage(true);
@@ -113,13 +96,6 @@ function Contactus() {
       }
     },
   });
-  
-    // const restData = async () =>
-    //  {const rawData= await fetch("https://restcountries.com/v3.1/all", { method: "GET" });
-    // const jsonData =await rawData.json();
-    // console.log(jsonData)}
-    // restData()
-  
 
   return (
     <div className="contactUsPage">
@@ -278,9 +254,7 @@ function Contactus() {
                           animate={{ x: 0 }}
                           transition={{ type: "spring", duration: 2.5 }}
                         >
-                          <Paper
-                            sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                          >
+                          <Paper>
                             <FormControl fullWidth sx={{ m: 0 }}>
                               <TextField
                                 label="Others"
@@ -305,9 +279,7 @@ function Contactus() {
                         animate={{ x: 0 }}
                         transition={{ type: "spring", duration: 2.5 }}
                       >
-                        <Paper
-                          sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                        >
+                        <Paper>
                           <FormControl fullWidth sx={{ m: 0 }}>
                             <TextField
                               label={
@@ -337,9 +309,7 @@ function Contactus() {
                         animate={{ x: 0 }}
                         transition={{ type: "spring", duration: 2.5 }}
                       >
-                        <Paper
-                          sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                        >
+                        <Paper>
                           <FormControl fullWidth sx={{ m: 0 }}>
                             <TextField
                               label={
@@ -369,9 +339,7 @@ function Contactus() {
                         animate={{ x: 0 }}
                         transition={{ type: "spring", duration: 2.5 }}
                       >
-                        <Paper
-                          sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                        >
+                        <Paper>
                           <FormControl fullWidth sx={{ m: 0 }}>
                             <TextField
                               label={
@@ -401,9 +369,7 @@ function Contactus() {
                         animate={{ x: 0 }}
                         transition={{ type: "spring", duration: 2.5 }}
                       >
-                        <Paper
-                          sx={{ backgroundColor: "rgba(255,255,255,0.7)" }}
-                        >
+                        <Paper>
                           <FormControl fullWidth sx={{ m: 0 }}>
                             <TextField
                               label={
@@ -484,20 +450,9 @@ function Contactus() {
                       </FormControl>
                     </motion.div>
                     {/* form text fiels ends */}
-
                     <Button
-                      style={{ display: "flex", justifyContent: "center" }}
                       type="submit"
                       variant="contained"
-                      onClick={() => {
-                        formik_email.values.companyname &&
-                        formik_email.values.name &&
-                        formik_email.values.email &&
-                        formik_email.values.phone &&
-                        formik_email.values.message != ""
-                          ? setLoading(true)
-                          : setLoading(false);
-                      }}
                       disabled={loading != true ? false : true}
                     >
                       {loading != true ? "Send" : "Please Wait..."}

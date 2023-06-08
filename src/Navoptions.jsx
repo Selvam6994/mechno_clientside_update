@@ -8,13 +8,14 @@ function Navoptions({ options }) {
   const [serviceMenu, setServiceMenu] = useState(false);
   const [automationMenu, setAutomationMenu] = useState(false);
 
+
   //   nav buttons style.
   const navOptionStyle = {
-    width: "150px",
+    width: "130px",
     fontFamily: "Dosis",
     fontSize: "15px",
   };
-
+ 
   //Services  Sub menu options
   const serviceMenuOptions = [
     {
@@ -63,8 +64,9 @@ function Navoptions({ options }) {
         <Link to={name.linkTo}>
           {" "}
           <Fab
+         style={navOptionStyle}
             variant="extended"
-            style={navOptionStyle}
+          
             onMouseEnter={
               name.subOption == "service"
                 ? () => setServiceMenu(true)
@@ -87,7 +89,8 @@ function Navoptions({ options }) {
             ) : (
               ""
             )}
-            {name.option}
+          {name.option}
+            
             {name.subOption === "service" ? (
               serviceMenu == true ? (
                 <div className="serviceMenu">

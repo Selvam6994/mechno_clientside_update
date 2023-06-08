@@ -7,7 +7,7 @@ import Mobilenavoptions from "./Mobilenavoptions";
 
 function Navbar() {
   const navWidth = useMediaQuery("(min-width:920px)");
-  const navOptionWidth = useMediaQuery("(min-width:1390px)");
+  const navOptionWidth = useMediaQuery("(min-width:1350px)");
   const movibleNavWidth = useMediaQuery("(min-width:470px)");
   // for nav logo color
   const [navStyle, setNavStyle] = useState(0);
@@ -55,8 +55,8 @@ function Navbar() {
         elevation={24}
         style={
           movibleNavWidth != true
-            ? { backgroundColor: "rgba(255,255,255,0.2)", height: "200px" }
-            : { backgroundColor: "rgba(255,255,255,0.2)", height: "100px" }
+            ? { backgroundColor: "rgba(255,255,255,1)", height: "200px" }
+            : { backgroundColor: "rgba(255,255,255,1)", height: "100px" }
         }
       >
         <div className="siteLogo">

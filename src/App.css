@@ -29,7 +29,17 @@
   justify-content: space-between;
   border-radius: 10px;
   position: fixed;
+
   z-index: 2;
+}
+
+/* nave option buttons css property */
+.fabButtons{
+  width: 150px;
+    font-family: Dosis;
+    font-size: 15px;
+    background-color: rgb(3,117,246);
+color: aliceblue;
 }
 
 /* Site Logo */
@@ -185,15 +195,18 @@
 }
 
 .item {
-  width: 280px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   cursor: grab;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
 }
 
 .item img {
-  width: 100%;
   min-width: 280px;
-  height: 100%;
   padding: 10px;
   pointer-events: none;
 }

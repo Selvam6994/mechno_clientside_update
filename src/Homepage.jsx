@@ -10,14 +10,13 @@ import { useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 
 function Homepage() {
-
   // Media query
   const movibleNavWidth = useMediaQuery("(min-width:470px)");
 
   const ref = useRef(null);
 
   const handleClick = () => {
-    ref.current?.scrollIntoView({behavior: 'smooth'});
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const imageAndCaption = [
@@ -73,14 +72,16 @@ function Homepage() {
                   {elements.caption}
                 </p>
 
-                <Button variant="contained"  onClick={handleClick}>Explore</Button>
+                <Button variant="contained" onClick={handleClick}>
+                  Explore
+                </Button>
               </motion.div>
             </Carousel.Caption>
           </Carousel.Item>
         ))}
       </Carousel>
       <div ref={ref}>
-      <About ></About>
+        <About></About>
       </div>
     </div>
   );
