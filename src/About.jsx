@@ -109,16 +109,16 @@ function About() {
 
   const ourServices = [
     {
-      image:industrialServices,
-      serviceName:"Industrial Services",
-      linkTo:"industrialservices"
+      image: industrialServices,
+      serviceName: "Industrial Services",
+      linkTo: "industrialservices",
     },
     {
-      image:automationServices,
-      serviceName:"Automation Services",
-      linkTo:"automationservices"
-    }
-  ]
+      image: automationServices,
+      serviceName: "Automation Services",
+      linkTo: "automationservices",
+    },
+  ];
 
   const [width, setWidth] = useState(0);
 
@@ -265,27 +265,35 @@ function About() {
         <div className="titleDiv">
           <h2>Our Services</h2>
         </div>
-        <div className={ourServicesWidth==true? "servicesCardSection":"servicesCardSectionMobile"}>
-         { ourServices.map((service)=>(<div className="imageCardAndTitle">
-            <Link to={service.linkTo}>
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <Paper
-                className="imageCard"
-                elevation={16}
-                sx={{
-                  borderRadius: "5%",
-                }}
-              >
-                <img src={service.image} alt={service.serviceName} />
-                <div className="hoverEffectDiv"></div>
-              </Paper>
-            </motion.div>
-            </Link>
-            <h3>{service.serviceName}</h3>
-          </div>))}
+        <div
+          className={
+            ourServicesWidth == true
+              ? "servicesCardSection"
+              : "servicesCardSectionMobile"
+          }
+        >
+          {ourServices.map((service) => (
+            <div className="imageCardAndTitle">
+              <Link to={service.linkTo}>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <Paper
+                    className="imageCard"
+                    elevation={16}
+                    sx={{
+                      borderRadius: "5%",
+                    }}
+                  >
+                    <img src={service.image} alt={service.serviceName} />
+                    <div className="hoverEffectDiv"></div>
+                  </Paper>
+                </motion.div>
+              </Link>
+              <h3>{service.serviceName}</h3>
+            </div>
+          ))}
         </div>
       </div>
     </div>

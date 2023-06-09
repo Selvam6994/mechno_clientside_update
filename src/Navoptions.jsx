@@ -55,17 +55,17 @@ function Navoptions({ options }) {
     {
       name: "Conveyors",
       delay: 0.1,
-      linkTo: "conveyors",
+      linkTo: "automationservices/conveyors",
     },
     {
       name: "Robotics",
       delay: 0.2,
-      linkTo: "robotics",
+      linkTo: "automationservices/robotics",
     },
     {
       name: "Panel Design",
       delay: 0.3,
-      linkTo: "paneldesign",
+      linkTo: "automationservices/paneldesign",
     },
   ];
   return (

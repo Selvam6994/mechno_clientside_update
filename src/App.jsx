@@ -5,9 +5,9 @@ import Gallery from "./Gallery";
 import Homepage from "./Homepage";
 import Navbar from "./Navbar";
 import Contactus from "./Contactus";
-import Fabrications from "./Fabrications";
 import IndustrialServices from "./IndustrialServices";
 import AutomationServices from "./AutomationServices";
+import Enclosures from "./Enclosures";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Route path="contact" element={<Contactus />} />
           <Route path="industrialservices" element={<IndustrialServices />} />
           <Route path="automationservices" element={<AutomationServices />} />
-          <Route path="fabrications" element={<Fabrications />} />
+          <Route path="industrialservices/enclosures" element={<Enclosures />} />
         </Routes>
         <Footer></Footer>
       </div>

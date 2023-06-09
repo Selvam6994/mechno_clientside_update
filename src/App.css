@@ -300,6 +300,10 @@
   align-items: center;
 }
 
+.titleDiv h2 {
+  text-decoration: underline;
+}
+
 /* cards display section below title div */
 .servicesCardSection {
   width: 100%;
@@ -421,6 +425,65 @@
   border-radius: 5%;
 }
 
+/* industrial services mainpage "Enclosures" */
+.enclosuresPage{
+  border: 2px solid green;
+  width: 100%;
+  min-width: 280px;
+  height: fit-content;
+}
+
+/* sub division in enclosure */
+.aboutEnclosures{
+  border: 2px solid green;
+  width: 100%;
+  min-width: 280px;
+  height: fit-content;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+}
+.summaryPaper{
+  width: 60%;
+  min-width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+ 
+}
+
+.aboutEnclosures :nth-child(1){
+  font-size: 30px;
+}
+
+/* the enclosure products dispaly section */
+.displayWorks{
+  border: 2px solid green;
+  width: 100%;
+  min-width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* dispaly enclosures images over cards */
+.enclosuresImageCards{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 /* Gallery Section */
 .gallery {
   height: fit-content;
@@ -480,12 +543,13 @@
 /*inline css property for Sub divisions under industrialsections page   */
 
 /* automationsection page */
-.automationServicesPage{
-  border: 2px solid green;
+.automationServicesPage {
   width: 100%;
   min-width: 280px;
   height: fit-content;
 }
+
+/* other css properties are common for both industrial services section and automation services section */
 
 /* contact page content below the image */
 .contactSection {
@@ -870,7 +934,10 @@
   align-items: center;
   gap: 2rem;
 }
-
+.servicesDiv :nth-child(n) {
+  text-decoration: none;
+  color: aliceblue;
+}
 /* sib div 2 of buttonDiv */
 .AutomationDiv {
   width: 50%;

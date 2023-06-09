@@ -29,6 +29,56 @@ function Footer() {
     },
   ];
 
+  const footerIndustrialServicesOptions = [
+    {
+      name: "Enclosure",
+      delay: 0.1,
+      linkTo: "industrialservices/enclosures",
+    },
+    {
+      name: "Jigs And Fixtures",
+      delay: 0.2,
+      linkTo: "industrialservices/jigs_and_fixtures",
+    },
+    {
+      name: "Pallets",
+      delay: 0.3,
+      linkTo: "industrialservices/pallets",
+    },
+    {
+      name: "Safety Fencing",
+      delay: 0.4,
+      linkTo: "industrialservices/safetyfencing",
+    },
+    {
+      name: "Trolleys",
+      delay: 0.5,
+      linkTo: "industrialservices/trolleys",
+    },
+    {
+      name: "Work Stations",
+      delay: 0.6,
+      linkTo: "industrialservices/workstations",
+    },
+  ];
+
+  const footerAutomationServicesOption = [
+    {
+      name: "Conveyors",
+      delay: 0.1,
+      linkTo: "automationservices/conveyors",
+    },
+    {
+      name: "Robotics",
+      delay: 0.2,
+      linkTo: "automationservices/robotics",
+    },
+    {
+      name: "Panel Design",
+      delay: 0.3,
+      linkTo: "automationservices/paneldesign",
+    },
+  ];
   // Media quries for footer starts
   const footerWidth = useMediaQuery("(min-width:1000px)");
   const contactDetailsWidth = useMediaQuery("(min-width:435px)");
@@ -136,16 +186,19 @@ function Footer() {
           }
         >
           <ul className="servicesDiv">
-            <h2>Fabrications</h2>
-            <h2>Trollys</h2>
-            <h2>Jigs & Fixtures</h2>
-            <h2>Safety Fencing</h2>
+            {footerIndustrialServicesOptions.map((option) => (
+              <Link to={option.linkTo}>
+                <h2>{option.name}</h2>
+              </Link>
+            ))}
           </ul>
           <div className="AutomationDiv">
             <ul className="servicesDiv">
-              <h2>Conveyors</h2>
-              <h2>Robot Programming</h2>
-              <h2>Panel Design</h2>
+              {footerAutomationServicesOption.map((option) => (
+                <Link to={option.linkTo}>
+                  <h2>{option.name}</h2>
+                </Link>
+              ))}
             </ul>
           </div>
         </div>
