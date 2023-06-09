@@ -57,7 +57,10 @@ function IndustrialServices() {
           }}
         />
       </div>
-      <div className="imageBox"></div>
+      <div className="imageBox">
+        <h1>Industrial Services</h1>
+       <Link to={"/"} style={{textDecoration:"none"}}> <h2 >Home</h2></Link>
+      </div>
       <div className="subDivisions">
         {services.map((cardData) => (
           <div className="imageAndTitle">
