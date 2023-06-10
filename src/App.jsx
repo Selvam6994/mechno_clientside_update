@@ -10,6 +10,7 @@ import AutomationServices from "./AutomationServices";
 import Enclosures from "./Enclosures";
 import JigsandFixtures from "./JigsandFixtures";
 import Pallets from "./Pallets";
+import Safetyfencing from "./Safetyfencing";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           />
 
           <Route path="/industrialservices/pallets" element={<Pallets />} />
+          <Route path="/industrialservices/safetyfencing" element={<Safetyfencing />} />
         </Routes>
         <Footer></Footer>
       </div>

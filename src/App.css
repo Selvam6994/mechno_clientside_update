@@ -439,7 +439,7 @@
 /* sub division in enclosure */
 .aboutEnclosures,
 .aboutjigsAndFixtures,
-.aboutPallets {
+.aboutPallets,.aboutSafetyFencing {
   border: 2px solid green;
   width: 100%;
   min-width: 280px;
@@ -465,7 +465,7 @@
 
 .aboutEnclosures,
 .aboutjigsAndFixtures,
-.aboutPallets:nth-child(n) {
+.aboutPallets,.aboutSafetyFencing:nth-child(n) {
   font-size: 30px;
 }
 
@@ -486,7 +486,7 @@
 
 /* dispaly enclosures images over cards */
 .enclosuresImageCards,
-.jigsAndFixturesImageCards,.palletsImageCards{
+.jigsAndFixturesImageCards,.palletsImageCards,.safetyFencingImageCards{
   display: flex;
   flex-direction: row;
   justify-content: center;
