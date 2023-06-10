@@ -1,23 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Paper } from "@mui/material";
-import topImage from "../src/assets/Images/Industrial services/Enclosures/Top image.jpg";
 import { Link } from "react-router-dom";
-import aluminiumEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium enclosures.jpg";
-import safetyEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium safety enclosures.jpg";
-function Enclosures() {
-  const enclosures = [
+import topImage from "../src/assets/Images/Industrial services/Pallets/Topimage.jpg";
+import storagePallets from "../src/assets/Images/Industrial services/Pallets/Transmission Storage Pallets in the warehouse.jpg";
+import transportationPallets from "../src/assets/Images/Industrial services/Pallets/Transmission pallet for Transportation.jpg";
+import wareHousePallets from "../src/assets/Images/Industrial services/Pallets/Transmission Storage Pallets.jpg";
+function Pallets() {
+  const pallets = [
     {
-      name: "Aluminium Enclosures",
-      image: aluminiumEnclosures,
+      name: "Storage Pallets",
+      image: storagePallets,
     },
     {
-      name: "Acrylic Enclosures",
-      image: safetyEnclosures,
+      name: "Transportation Pallets",
+      image: transportationPallets,
+    },
+    {
+      name: "Warehouse Pallets",
+      image: wareHousePallets,
     },
   ];
   return (
-    <div className="enclosuresPage">
+    <div className="palletsPage">
       <div className="topImage">
         <img
           src={topImage}
@@ -31,7 +36,7 @@ function Enclosures() {
         />
       </div>
       <div className="imageBox">
-        <h1>Machine Enclosures</h1>
+        <h1>Pallets</h1>
         <Link to={"/"} style={{ textDecoration: "none" }}>
           <h2>Home</h2>
         </Link>
@@ -39,7 +44,7 @@ function Enclosures() {
           <h2>Industrial Services</h2>
         </Link>
       </div>
-      <div className="aboutEnclosures">
+      <div className="aboutPallets">
         <motion.div
           className="aboutUs"
           whileTap={{ cursor: "grabbing" }}
@@ -57,16 +62,20 @@ function Enclosures() {
             className="summaryPaper"
           >
             <p>
-              Machine enclosures are structured cabinets that cover the hardware
-              components and electrical circuits, thus enhancing aesthetics and
-              providing safety protection.
+              Pallets play a crucial role in supply chains by facilitating the
+              movement of goods, optimizing storage space, and enabling easy
+              loading and unloading of products. They have become an integral
+              part of modern logistics and are used worldwide for efficient and
+              standardized material handling. We are one of the bulk
+              manufacturers of pallets made from various materials such as
+              different grades of plastic and metal.
             </p>
           </Paper>
         </motion.div>
         <div className="displayWorks">
           <h2>The Works We Do</h2>
-          <div className="enclosuresImageCards">
-            {enclosures.map((cardData) => (
+          <div className="palletsImageCards">
+            {pallets.map((cardData) => (
               <div className="imageAndTitle">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
@@ -92,4 +101,4 @@ function Enclosures() {
   );
 }
 
-export default Enclosures;
+export default Pallets;

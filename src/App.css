@@ -212,6 +212,7 @@
 }
 
 /* About-us & vission and mission section  */
+/* about us css property also used for elclosures,jigsandfixtures,pallets safety fencing,workstation,trolly components */
 .aboutUs {
   margin: 40px 0 0 0;
   height: fit-content;
@@ -425,16 +426,20 @@
   border-radius: 5%;
 }
 
+/* enclosure css property starts */
 /* industrial services mainpage "Enclosures" */
-.enclosuresPage{
-  border: 2px solid green;
+.enclosuresPage,
+.jigsFixturesPage,
+.palletsPage {
   width: 100%;
   min-width: 280px;
   height: fit-content;
 }
 
 /* sub division in enclosure */
-.aboutEnclosures{
+.aboutEnclosures,
+.aboutjigsAndFixtures,
+.aboutPallets {
   border: 2px solid green;
   width: 100%;
   min-width: 280px;
@@ -447,7 +452,7 @@
   gap: 2rem;
   padding: 20px;
 }
-.summaryPaper{
+.summaryPaper {
   width: 60%;
   min-width: 280px;
   height: fit-content;
@@ -456,16 +461,16 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
- 
 }
 
-.aboutEnclosures :nth-child(1){
+.aboutEnclosures,
+.aboutjigsAndFixtures,
+.aboutPallets:nth-child(n) {
   font-size: 30px;
 }
 
 /* the enclosure products dispaly section */
-.displayWorks{
-  border: 2px solid green;
+.displayWorks {
   width: 100%;
   min-width: 280px;
   height: fit-content;
@@ -475,14 +480,23 @@
   align-items: center;
 }
 
+.displayWorks h2 {
+  text-decoration: underline;
+}
+
 /* dispaly enclosures images over cards */
-.enclosuresImageCards{
+.enclosuresImageCards,
+.jigsAndFixturesImageCards,.palletsImageCards{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
+
+/* enclosure css property ends */
+
+/* jigs and fixtures css properties starts */
 
 /* Gallery Section */
 .gallery {

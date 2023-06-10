@@ -8,6 +8,8 @@ import Contactus from "./Contactus";
 import IndustrialServices from "./IndustrialServices";
 import AutomationServices from "./AutomationServices";
 import Enclosures from "./Enclosures";
+import JigsandFixtures from "./JigsandFixtures";
+import Pallets from "./Pallets";
 
 function App() {
   return (
@@ -20,7 +22,16 @@ function App() {
           <Route path="contact" element={<Contactus />} />
           <Route path="industrialservices" element={<IndustrialServices />} />
           <Route path="automationservices" element={<AutomationServices />} />
-          <Route path="industrialservices/enclosures" element={<Enclosures />} />
+          <Route
+            path="industrialservices/enclosures"
+            element={<Enclosures />}
+          />
+          <Route
+            path="/industrialservices/jigs_and_fixtures"
+            element={<JigsandFixtures />}
+          />
+
+          <Route path="/industrialservices/pallets" element={<Pallets />} />
         </Routes>
         <Footer></Footer>
       </div>

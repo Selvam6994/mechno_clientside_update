@@ -1,23 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Paper } from "@mui/material";
-import topImage from "../src/assets/Images/Industrial services/Enclosures/Top image.jpg";
 import { Link } from "react-router-dom";
-import aluminiumEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium enclosures.jpg";
-import safetyEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium safety enclosures.jpg";
-function Enclosures() {
-  const enclosures = [
+import topImage from "../src/assets/Images/Industrial services/Jigs and fixtures/Topimage.jpg";
+import cncFixture from "../src/assets/Images/Industrial services/Jigs and fixtures/CNC Fixture.jpg";
+import hydraulicFixture from "../src/assets/Images/Industrial services/Jigs and fixtures/Hydraulic Fixture.jpg";
+import vmcFixture from "../src/assets/Images/Industrial services/Jigs and fixtures/VMC Fixture.jpg";
+
+function JigsandFixtures() {
+  const jigsfixtures = [
     {
-      name: "Aluminium Enclosures",
-      image: aluminiumEnclosures,
+      name: "CNC Fixtures",
+      image: cncFixture,
     },
     {
-      name: "Acrylic Enclosures",
-      image: safetyEnclosures,
+      name: "Hydraulic Fixtures",
+      image: hydraulicFixture,
+    },
+    {
+      name: "VMC Fixtures",
+      image: vmcFixture,
     },
   ];
   return (
-    <div className="enclosuresPage">
+    <div className="jigsFixturesPage">
       <div className="topImage">
         <img
           src={topImage}
@@ -39,7 +45,7 @@ function Enclosures() {
           <h2>Industrial Services</h2>
         </Link>
       </div>
-      <div className="aboutEnclosures">
+      <div className="aboutjigsAndFixtures">
         <motion.div
           className="aboutUs"
           whileTap={{ cursor: "grabbing" }}
@@ -57,16 +63,18 @@ function Enclosures() {
             className="summaryPaper"
           >
             <p>
-              Machine enclosures are structured cabinets that cover the hardware
-              components and electrical circuits, thus enhancing aesthetics and
-              providing safety protection.
+              Manufacturing industries rely heavily on jigs and fixtures. The
+              jigs and fixtures we manufacture for special purposes are designed
+              and manufactured by our team of experts and experienced engineers.
+              Generally, we manufacture tools for the automotive and general
+              components manufacturing industries.
             </p>
           </Paper>
         </motion.div>
         <div className="displayWorks">
           <h2>The Works We Do</h2>
-          <div className="enclosuresImageCards">
-            {enclosures.map((cardData) => (
+          <div className="jigsAndFixturesImageCards">
+            {jigsfixtures.map((cardData) => (
               <div className="imageAndTitle">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
@@ -92,4 +100,4 @@ function Enclosures() {
   );
 }
 
-export default Enclosures;
+export default JigsandFixtures;
