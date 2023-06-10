@@ -11,6 +11,8 @@ import Enclosures from "./Enclosures";
 import JigsandFixtures from "./JigsandFixtures";
 import Pallets from "./Pallets";
 import Safetyfencing from "./Safetyfencing";
+import TrolleyandRacks from "./TrolleyandRacks";
+import Workstations from "./Workstations";
 
 function App() {
   return (
@@ -33,7 +35,18 @@ function App() {
           />
 
           <Route path="/industrialservices/pallets" element={<Pallets />} />
-          <Route path="/industrialservices/safetyfencing" element={<Safetyfencing />} />
+          <Route
+            path="/industrialservices/safetyfencing"
+            element={<Safetyfencing />}
+          />
+          <Route
+            path="/industrialservices/trolleys"
+            element={<TrolleyandRacks />}
+          />
+          <Route
+            path="/industrialservices/workstations"
+            element={<Workstations />}
+          />
         </Routes>
         <Footer></Footer>
       </div>

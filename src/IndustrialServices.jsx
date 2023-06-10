@@ -6,7 +6,7 @@ import enclosures from "../src/assets/Images/Industrial services/Enclosures/Alum
 import jigsFixtures from "../src/assets/Images/Industrial services/Jigs and fixtures/Jigs and fixtures.webp";
 import pallets from "../src/assets/Images/Industrial services/Pallets/Transmission pallet for Transportation.jpg";
 import safetyFencing from "../src/assets/Images/Industrial services/Safety fencing/MS robot safety fencing for production line.jpg";
-import trolleysAndRacks from "../src/assets/Images/Industrial services/trollys and Racks/Aluminium frame trollys.jpg";
+import trolleysAndRacks from "../src/assets/Images/Industrial services/trollys and Racks/Closed Aluminium Profile trollys.jpg";
 import workStation from "../src/assets/Images/Industrial services/Work stations/Aluminium Frame Workstations With Storage.jpg";
 import { Link } from "react-router-dom";
 

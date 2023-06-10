@@ -45,32 +45,32 @@ function Mobilenavoptions() {
     {
       name: "Enclosure",
       delay: 0.1,
-      linkTo:"industrialservices/enclosures"
+      linkTo: "industrialservices/enclosures",
     },
     {
       name: "Jigs And Fixtures",
       delay: 0.2,
-      linkTo:"industrialservices/jigs_and_fixtures"
+      linkTo: "industrialservices/jigs_and_fixtures",
     },
     {
       name: "Pallets",
       delay: 0.3,
-      linkTo:"industrialservices/pallets"
+      linkTo: "industrialservices/pallets",
     },
     {
       name: "Safety Fencing",
       delay: 0.4,
-      linkTo:"industrialservices/safetyfencing"
+      linkTo: "industrialservices/safetyfencing",
     },
     {
-      name: "Trolleys",
+      name: "Racks And Trolleys",
       delay: 0.5,
-      linkTo:"industrialservices/trolleys"
-    },  
+      linkTo: "industrialservices/trolleys",
+    },
     {
       name: "Work Stations",
       delay: 0.6,
-      linkTo:"industrialservices/workstations"
+      linkTo: "industrialservices/workstations",
     },
   ];
 
@@ -168,9 +168,11 @@ function Mobilenavoptions() {
                       ease: [0, 0.71, 0.2, 1.01],
                     }}
                   >
-                    <Button variant="contained" style={{ width: "150px" }}>
-                      {option.name}
-                    </Button>
+                    <Link to={option.linkTo}>
+                      <Button variant="contained" style={{ width: "150px" }}>
+                        {option.name}
+                      </Button>
+                    </Link>
                   </motion.div>
                 ))}
               </div>

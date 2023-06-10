@@ -39,7 +39,7 @@ function Navoptions({ options }) {
       linkTo:"industrialservices/safetyfencing"
     },
     {
-      name: "Trolleys",
+      name: "Racks And Trolleys",
       delay: 0.5,
       linkTo:"industrialservices/trolleys"
     },  
