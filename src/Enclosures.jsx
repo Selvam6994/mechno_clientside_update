@@ -5,6 +5,7 @@ import topImage from "../src/assets/Images/Industrial services/Enclosures/Top im
 import { Link } from "react-router-dom";
 import aluminiumEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium enclosures.jpg";
 import safetyEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium safety enclosures.jpg";
+import aluminumProfileEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium Profile Enclosures.jpg";
 function Enclosures() {
   const enclosures = [
     {
@@ -14,6 +15,10 @@ function Enclosures() {
     {
       name: "Acrylic Enclosures",
       image: safetyEnclosures,
+    },
+    {
+      name: "Aluminium Profile Enclosures",
+      image: aluminumProfileEnclosures,
     },
   ];
   return (
