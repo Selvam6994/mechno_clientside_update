@@ -433,7 +433,8 @@
 .palletsPage,
 .safetyFencingPage,
 .trollyPage,
-.workstationPage {
+.workstationPage,
+.conveyorsPage,.roboticsPage {
   width: 100%;
   min-width: 280px;
   height: fit-content;
@@ -445,7 +446,8 @@
 .aboutPallets,
 .aboutSafetyFencing,
 .aboutTrolleys,
-.aboutWorkstation {
+.aboutWorkstation,
+.aboutConveyors,.aboutRobotics {
   border: 2px solid green;
   width: 100%;
   min-width: 280px;
@@ -474,7 +476,8 @@
 .aboutPallets,
 .aboutSafetyFencing,
 .aboutTrolleys,
-.aboutWorkstation:nth-child(n) {
+.aboutWorkstation,
+.aboutConveyors,.aboutRobotics:nth-child(n) {
   font-size: 30px;
 }
 
@@ -499,7 +502,8 @@
 .palletsImageCards,
 .safetyFencingImageCards,
 .trolleysImageCards,
-.workstationImageCards {
+.workstationImageCards,
+.conveyorsImageCards,.roboticsImageCards {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -518,6 +522,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+/* media query for gallery margin top */
+.galleryOnMobile{
+  height: fit-content;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0 0 0;
 }
 
 /* View Images */
@@ -842,7 +855,7 @@
   margin: 10px;
 }
 /* email send button */
-.sendButtonDiv{
+.sendButtonDiv {
   display: flex;
   justify-content: center;
   align-items: center;

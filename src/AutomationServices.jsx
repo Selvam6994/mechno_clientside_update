@@ -1,8 +1,8 @@
 import React from "react";
 import automationImage from "../src/assets/Images/Automation Services/Automation services.jpg";
 import conveyor from "../src/assets/Images/Automation Services/Conveyors/Belt conveyor.jpg";
-import panelWiring from "../src/assets/Images/Automation Services/Panel Wiring.jpg";
-import robotProgram from "../src/assets/Images/Automation Services/Robot Programming.jpg";
+import panelWiring from "../src/assets/Images/Automation Services/Panel Designing/Panel Wiring.jpg";
+import robotProgram from "../src/assets/Images/Automation Services/Robotics/Robot Programming.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Paper } from "@mui/material";

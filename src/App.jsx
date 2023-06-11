@@ -13,6 +13,8 @@ import Pallets from "./Pallets";
 import Safetyfencing from "./Safetyfencing";
 import TrolleyandRacks from "./TrolleyandRacks";
 import Workstations from "./Workstations";
+import Conveyors from "./Conveyors";
+import Robotprogramming from "./Robotprogramming";
 
 
 function App() {
@@ -49,6 +51,14 @@ function App() {
           <Route
             path="/industrialservices/workstations"
             element={<Workstations />}
+          />
+           <Route
+            path="/automationservices/conveyors"
+            element={<Conveyors />}
+          />
+           <Route
+            path="/automationservices/robotics"
+            element={<Robotprogramming />}
           />
         </Routes>
 

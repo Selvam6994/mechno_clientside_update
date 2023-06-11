@@ -104,13 +104,13 @@ function Gallery() {
       id: 13,
     },
   ];
-
+  const movibleNavWidth = useMediaQuery("(min-width:566px)");
   const galleryWidth = useMediaQuery("(min-width:1390px)");
   const [imageView, setImageView] = useState(false);
   const [imageData, setImageData] = useState("");
 
   return (
-    <div className="gallery">
+    <div className={movibleNavWidth==true?"gallery":"galleryOnMobile"}>
        <ScrolltoTop/>
       <h2 style={{ margin: "150px 0 0 0" }}>Our Gallery</h2>
       <Box sx={{ width: "100%", height: "fitContent", margin: "50px 0 0 0" }}>

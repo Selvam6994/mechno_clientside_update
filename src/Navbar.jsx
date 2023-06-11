@@ -8,7 +8,7 @@ import Mobilenavoptions from "./Mobilenavoptions";
 function Navbar() {
   const navWidth = useMediaQuery("(min-width:920px)");
   const navOptionWidth = useMediaQuery("(min-width:1350px)");
-  const movibleNavWidth = useMediaQuery("(min-width:470px)");
+  const movibleNavWidth = useMediaQuery("(min-width:566px)");
   // for nav logo color
   const [navStyle, setNavStyle] = useState(0);
 
