@@ -6,7 +6,12 @@ import { Link } from "react-router-dom";
 import aluminiumEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium enclosures.jpg";
 import safetyEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium safety enclosures.jpg";
 import aluminumProfileEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium Profile Enclosures.jpg";
-function Enclosures() {
+import ScrolltoTop from "./ScrolltoTop";
+
+
+function Enclosures({pageView}) {
+
+
   const enclosures = [
     {
       name: "Aluminium Enclosures",
@@ -22,8 +27,9 @@ function Enclosures() {
     },
   ];
   return (
-    <div className="enclosuresPage">
-      <div className="topImage">
+    <div className="enclosuresPage" >
+        <ScrolltoTop/>
+      <div className="topImage" ref={pageView}>
         <img
           src={topImage}
           alt="Image in contact page"

@@ -6,6 +6,7 @@ import topImage from "../src/assets/Images/Industrial services/Jigs and fixtures
 import cncFixture from "../src/assets/Images/Industrial services/Jigs and fixtures/CNC Fixture.jpg";
 import hydraulicFixture from "../src/assets/Images/Industrial services/Jigs and fixtures/Hydraulic Fixture.jpg";
 import vmcFixture from "../src/assets/Images/Industrial services/Jigs and fixtures/VMC Fixture.jpg";
+import ScrolltoTop from "./ScrolltoTop";
 
 function JigsandFixtures() {
   const jigsfixtures = [
@@ -24,6 +25,7 @@ function JigsandFixtures() {
   ];
   return (
     <div className="jigsFixturesPage">
+       <ScrolltoTop/>
       <div className="topImage">
         <img
           src={topImage}

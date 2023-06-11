@@ -16,6 +16,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { green, orange, pink, red } from "@mui/material/colors";
 import { api } from "./global";
+import ScrolltoTop from "./ScrolltoTop";
 
 function Contactus() {
   // Media query
@@ -99,6 +100,7 @@ function Contactus() {
 
   return (
     <div className="contactUsPage">
+       <ScrolltoTop/>
       <div className="topImage">
         <img
           src={contactBgImage}
@@ -450,13 +452,15 @@ function Contactus() {
                       </FormControl>
                     </motion.div>
                     {/* form text fiels ends */}
-                    <Button
+                    <div className="sendButtonDiv">
+                    <Button 
                       type="submit"
                       variant="contained"
                       disabled={loading != true ? false : true}
                     >
                       {loading != true ? "Send" : "Please Wait..."}
                     </Button>
+                    </div>
                   </div>
                 </Box>
               ) : (

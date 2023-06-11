@@ -7,7 +7,7 @@ import aluminiumStroageStation from "../src/assets/Images/Industrial services/Wo
 import aluminiumProfileStation from "../src/assets/Images/Industrial services/Work stations/Aluminium Frame Workstations.jpg";
 import msStation from "../src/assets/Images/Industrial services/Work stations/MS Stand alone workstations.jpg";
 import assemblyStation from "../src/assets/Images/Industrial services/Work stations/Assembly Work Station.jpg";
-
+import ScrolltoTop from "./ScrolltoTop";
 
 function Workstations() {
   const workStations = [
@@ -30,6 +30,7 @@ function Workstations() {
   ];
   return (
     <div className="workstationPage">
+      <ScrolltoTop />
       <div className="topImage">
         <img
           src={topImage}

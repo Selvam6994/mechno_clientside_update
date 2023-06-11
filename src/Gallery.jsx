@@ -23,6 +23,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import { useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
+import ScrolltoTop from "./ScrolltoTop";
 // import { Galleryimageanimation } from "./Galleryimageanimation";
 // import IconButton from "@mui/material/IconButton";
 // import CloseIcon from "@mui/icons-material/Close";
@@ -110,6 +111,7 @@ function Gallery() {
 
   return (
     <div className="gallery">
+       <ScrolltoTop/>
       <h2 style={{ margin: "150px 0 0 0" }}>Our Gallery</h2>
       <Box sx={{ width: "100%", height: "fitContent", margin: "50px 0 0 0" }}>
         <ImageList variant="masonry" cols={3} gap={20}>

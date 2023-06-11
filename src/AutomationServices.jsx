@@ -6,6 +6,7 @@ import robotProgram from "../src/assets/Images/Automation Services/Robot Program
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Paper } from "@mui/material";
+import ScrolltoTop from "./ScrolltoTop";
 
 function AutomationServices() {
   const automationServices = [
@@ -27,6 +28,7 @@ function AutomationServices() {
   ];
   return (
     <div className="automationServicesPage">
+       <ScrolltoTop/>
       <div className="topImage">
         <img
           src={automationImage}

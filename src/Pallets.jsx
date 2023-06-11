@@ -6,6 +6,7 @@ import topImage from "../src/assets/Images/Industrial services/Pallets/Topimage.
 import storagePallets from "../src/assets/Images/Industrial services/Pallets/Transmission Storage Pallets in the warehouse.jpg";
 import transportationPallets from "../src/assets/Images/Industrial services/Pallets/Transmission pallet for Transportation.jpg";
 import wareHousePallets from "../src/assets/Images/Industrial services/Pallets/Transmission Storage Pallets.jpg";
+import ScrolltoTop from "./ScrolltoTop";
 function Pallets() {
   const pallets = [
     {
@@ -23,6 +24,7 @@ function Pallets() {
   ];
   return (
     <div className="palletsPage">
+       <ScrolltoTop/>
       <div className="topImage">
         <img
           src={topImage}

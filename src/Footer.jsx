@@ -10,7 +10,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-function Footer() {
+function Footer({clickToView}) {
   const socialMedia = [
     {
       name: "Instagram",
@@ -187,7 +187,7 @@ function Footer() {
         >
           <ul className="servicesDiv">
             {footerIndustrialServicesOptions.map((option) => (
-              <Link to={option.linkTo}>
+              <Link onClick={clickToView} to={option.linkTo}>
                 <h2>{option.name}</h2>
               </Link>
             ))}

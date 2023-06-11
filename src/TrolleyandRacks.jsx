@@ -9,6 +9,7 @@ import closedAluminiumTrollys from "../src/assets/Images/Industrial services/tro
 import opendAluminiumTrollys from "../src/assets/Images/Industrial services/trollys and Racks/Opend Aluminium Profile Trollys.jpg";
 import ssStorageTrollys from "../src/assets/Images/Industrial services/trollys and Racks/SS pipe storage trollys.jpg";
 import ssTrollys from "../src/assets/Images/Industrial services/trollys and Racks/Stainless Steel Trollys.jpg";
+import ScrolltoTop from "./ScrolltoTop";
 
 function TrolleyandRacks() {
   const trolleysAndRacks = [
@@ -39,6 +40,7 @@ function TrolleyandRacks() {
   ];
   return (
     <div className="trollyPage">
+       <ScrolltoTop/>
       <div className="topImage">
         <img
           src={topImage}

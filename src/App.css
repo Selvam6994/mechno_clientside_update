@@ -841,7 +841,12 @@
   justify-content: center;
   margin: 10px;
 }
-
+/* email send button */
+.sendButtonDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* mail sent confirmation message box */
 .emailStatus {
   display: flex;

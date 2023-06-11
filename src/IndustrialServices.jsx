@@ -9,6 +9,7 @@ import safetyFencing from "../src/assets/Images/Industrial services/Safety fenci
 import trolleysAndRacks from "../src/assets/Images/Industrial services/trollys and Racks/Closed Aluminium Profile trollys.jpg";
 import workStation from "../src/assets/Images/Industrial services/Work stations/Aluminium Frame Workstations With Storage.jpg";
 import { Link } from "react-router-dom";
+import ScrolltoTop from "./ScrolltoTop";
 
 function IndustrialServices() {
   const services = [
@@ -45,6 +46,7 @@ function IndustrialServices() {
   ];
   return (
     <div className="industrialServicesPage">
+       <ScrolltoTop/>
       <div className="topImage">
         <img
           src={industrialImage}

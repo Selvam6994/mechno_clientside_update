@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import About from "./About";
 import { useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
+import ScrolltoTop from "./ScrolltoTop";
 
 function Homepage() {
   // Media query
@@ -36,6 +37,7 @@ function Homepage() {
 
   return (
     <div className="homePage">
+       <ScrolltoTop/>
       <Carousel className="carousel">
         {imageAndCaption.map((elements) => (
           <Carousel.Item key={elements.image}>

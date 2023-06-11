@@ -9,6 +9,7 @@ import conveyorSafetyFencing from "../src/assets/Images/Industrial services/Safe
 import spmSafetyFencing from "../src/assets/Images/Industrial services/Safety fencing/Aluminium safety fencing for spm.jpg";
 import msPartitionFencing from "../src/assets/Images/Industrial services/Safety fencing/MS partition fencing.jpg";
 import msRobotSafetyFencing from "../src/assets/Images/Industrial services/Safety fencing/MS Robot safety fencing.jpg";
+import ScrolltoTop from "./ScrolltoTop";
 function Safetyfencing() {
   const safetyFencing = [
     {
@@ -38,6 +39,7 @@ function Safetyfencing() {
   ];
   return (
     <div className="safetyFencingPage">
+       <ScrolltoTop/>
       <div className="topImage">
         <img
           src={topImage}

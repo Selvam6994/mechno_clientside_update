@@ -14,14 +14,17 @@ import Safetyfencing from "./Safetyfencing";
 import TrolleyandRacks from "./TrolleyandRacks";
 import Workstations from "./Workstations";
 
+
 function App() {
   return (
     <div className="app">
       <Navbar></Navbar>
+
       <div className="siteBody">
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="gallery" element={<Gallery />} />
+
           <Route path="contact" element={<Contactus />} />
           <Route path="industrialservices" element={<IndustrialServices />} />
           <Route path="automationservices" element={<AutomationServices />} />
@@ -48,6 +51,7 @@ function App() {
             element={<Workstations />}
           />
         </Routes>
+
         <Footer></Footer>
       </div>
     </div>
