@@ -18,10 +18,10 @@ function Robotprogramming() {
         name: "NACHI",
         image: nachi,
       },
-      {
-        name: "YASKAWA",
-        image: yaskawa,
-      }
+      // {
+      //   name: "YASKAWA",
+      //   image: yaskawa,
+      // }
   ];
   return (
     <div className="roboticsPage">
