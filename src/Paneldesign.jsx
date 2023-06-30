@@ -2,29 +2,35 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Paper } from "@mui/material";
 import { Link } from "react-router-dom";
-import topImage from "../src/assets/Images/Automation Services/Conveyors/Topimage.jpg";
-import flatBeltConveyor from "../src/assets/Images/Automation Services/Conveyors/Belt conveyor.jpg";
-import inclinedBeltConveyor from "../src/assets/Images/Automation Services/Conveyors/Inclined belt conveyor.jpg";
-import chainConveyor from "../src/assets/Images/Automation Services/Conveyors/Chain Conveyor.jpg";
+import topImage from "../src/assets/Images/Automation Services/Panel Designing/Panel Wiring.jpg";
+import panelDesign from "../src/assets/Images/Automation Services/Panel Designing/Panel.jpg";
+import PLC from "../src/assets/Images/Automation Services/Panel Designing/PLC.jpg";
+import panelAccessories from "../src/assets/Images/Automation Services/Panel Designing/Panel Accessories.jpg";
+import VFD from "../src/assets/Images/Automation Services/Panel Designing/VFD.jpg";
 import ScrolltoTop from "./ScrolltoTop";
 
-function Conveyors() {
-  const conveyors = [
+
+function Paneldesign() {
+  const panel = [
     {
-      name: " Flat Belt Conveyors",
-      image: flatBeltConveyor,
+      name: "Panel Desiging",
+      image: panelDesign,
     },
     {
-      name: "Inclined Belt Conveyors",
-      image: inclinedBeltConveyor,
+      name: "Panel Accessories",
+      image: panelAccessories,
     },
     {
-      name: "Chain Conveyors",
-      image: chainConveyor,
+      name: "PLC",
+      image: PLC,
+    },
+    {
+      name: "VFD",
+      image: VFD,
     },
   ];
   return (
-    <div className="conveyorsPage">
+    <div className="panelPage">
       <ScrolltoTop />
       <div className="topImage">
         <img
@@ -39,7 +45,7 @@ function Conveyors() {
         />
       </div>
       <div className="imageBox">
-        <h1>Conveyors</h1>
+        <h1>Panel Design</h1>
         <Link to={"/"} style={{ textDecoration: "none" }}>
           <h2>Home</h2>
         </Link>
@@ -47,7 +53,7 @@ function Conveyors() {
           <h2>Automation Services</h2>
         </Link>
       </div>
-      <div className="aboutConveyors">
+      <div className="aboutPanel">
         <motion.div
           className="aboutUs"
           whileTap={{ cursor: "grabbing" }}
@@ -65,22 +71,17 @@ function Conveyors() {
             className="summaryPaper"
           >
             <p>
-              Conveyor systems facilitate the efficient, fast, and automated
-              movement of materials and products in modern industrial processes.
-              With our conveyor systems, industrial facilities can increase
-              productivity, improve safety, and optimize workflow. They can also
-              be integrated with other equipment and machinery, including
-              packaging machines, sorting machines, weighing scales, and
-              robotics. As a result of this integration, the entire production
-              or logistics process can be automated and enhanced to ensure
-              seamless material flow.
+              Panel designing, wiring, panel fabrications, and programming
+              services are offered by Mechno Dream Industry. We also provide
+              electrical components such as PLCs and their accessories,
+              electrical fixtures, VFDs, and all panel accessories, as well as
+              programming, robotics, and wiring hardness testing.
             </p>
           </Paper>
         </motion.div>
         <div className="displayWorks">
-          <h2>Our Work</h2>
-          <div className="conveyorsImageCards">
-            {conveyors.map((cardData) => (
+          <div className="panelImageCards">
+            {panel.map((cardData) => (
               <div className="imageAndTitle">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
@@ -106,4 +107,4 @@ function Conveyors() {
   );
 }
 
-export default Conveyors;
+export default Paneldesign;

@@ -15,6 +15,7 @@ import TrolleyandRacks from "./TrolleyandRacks";
 import Workstations from "./Workstations";
 import Conveyors from "./Conveyors";
 import Robotprogramming from "./Robotprogramming";
+import Paneldesign from "./Paneldesign";
 
 
 function App() {
@@ -59,6 +60,10 @@ function App() {
            <Route
             path="/automationservices/robotics"
             element={<Robotprogramming />}
+          />
+           <Route
+            path="/automationservices/paneldesign"
+            element={<Paneldesign />}
           />
         </Routes>
 

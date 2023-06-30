@@ -17,11 +17,11 @@ function Footer({clickToView}) {
       icon: insta,
       link: "https://www.instagram.com/mechno_dream_industry/?igshid=ZDdkNTZiNTM%3D&__coig_restricted=1",
     },
-    {
-      name: "Facebook",
-      icon: faceBook,
-      link: "",
-    },
+    // {
+    //   name: "Facebook",
+    //   icon: faceBook,
+    //   link: "",
+    // },
     {
       name: "Linkedin",
       icon: linkedin,
@@ -178,7 +178,7 @@ function Footer({clickToView}) {
       </div>
       <div className="ourServicesDiv">
         <h1>
-          <b>Our Services</b>
+          <b style={{textDecoration:"underLine"}}>Our Services</b>
         </h1>
         <div
           className={

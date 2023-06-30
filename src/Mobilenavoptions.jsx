@@ -79,14 +79,17 @@ function Mobilenavoptions() {
     {
       name: "Conveyors",
       delay: 0.1,
+      linkTo: "automationservices/conveyors",
     },
     {
       name: "Robotics",
       delay: 0.2,
+      linkTo: "automationservices/robotics",
     },
     {
       name: "Panel Design",
       delay: 0.3,
+      linkTo: "automationservices/paneldesign",
     },
   ];
   return (
@@ -169,7 +172,13 @@ function Mobilenavoptions() {
                     }}
                   >
                     <Link to={option.linkTo}>
-                      <Button variant="contained" style={{ width: "150px" }}>
+                      <Button
+                        variant="contained"
+                        style={{ width: "150px" }}
+                        onClick={() =>
+                          setServiceSubMenu(false) || setMenuIcon(false)
+                        }
+                      >
                         {option.name}
                       </Button>
                     </Link>
@@ -195,9 +204,17 @@ function Mobilenavoptions() {
                       ease: [0, 0.71, 0.2, 1.01],
                     }}
                   >
-                    <Button variant="contained" style={{ width: "150px" }}>
-                      {option.name}
-                    </Button>
+                    <Link to={option.linkTo}>
+                      <Button
+                        variant="contained"
+                        style={{ width: "150px" }}
+                        onClick={() =>
+                          setAutomationSubMenu(false) || setMenuIcon(false)
+                        }
+                      >
+                        {option.name}
+                      </Button>
+                    </Link>
                   </motion.div>
                 ))}
               </div>

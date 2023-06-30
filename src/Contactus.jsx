@@ -24,10 +24,9 @@ function Contactus() {
   const contactPageContentWidth = useMediaQuery("(min-width:910px)");
   const quotationSectionWidth = useMediaQuery("(min-width:1330px)");
 
-  const [form, setForm] = useState(false);
   const [formMessage, setFormMessage] = useState(false);
   const [loading, setLoading] = useState(false);
-  const detailsSectionWidth = useMediaQuery("(min-width:1200px)");
+
 
   const navigate = useNavigate();
 
@@ -100,7 +99,7 @@ function Contactus() {
 
   return (
     <div className="contactUsPage">
-       <ScrolltoTop/>
+      <ScrolltoTop />
       <div className="topImage">
         <img
           src={contactBgImage}
@@ -453,13 +452,13 @@ function Contactus() {
                     </motion.div>
                     {/* form text fiels ends */}
                     <div className="sendButtonDiv">
-                    <Button 
-                      type="submit"
-                      variant="contained"
-                      disabled={loading != true ? false : true}
-                    >
-                      {loading != true ? "Send" : "Please Wait..."}
-                    </Button>
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        disabled={loading != true ? false : true}
+                      >
+                        {loading != true ? "Send" : "Please Wait..."}
+                      </Button>
                     </div>
                   </div>
                 </Box>
@@ -510,7 +509,6 @@ function Contactus() {
                           onClick={() => {
                             navigate("/");
                             setFormMessage(false);
-                            setForm(false);
                           }}
                         >
                           Back
