@@ -10,7 +10,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-function Footer({clickToView}) {
+function Footer({ clickToView }) {
   const socialMedia = [
     {
       name: "Instagram",
@@ -167,7 +167,7 @@ function Footer({clickToView}) {
               <img
                 style={{
                   width: "50px",
-                  margin: "20px 0 0 0",
+                  margin: "20px 20px 0 0",
                 }}
                 src={media.icon}
                 alt={media.name}
@@ -178,7 +178,7 @@ function Footer({clickToView}) {
       </div>
       <div className="ourServicesDiv">
         <h1>
-          <b style={{textDecoration:"underLine"}}>Our Services</b>
+          <b style={{ textDecoration: "underLine" }}>Our Services</b>
         </h1>
         <div
           className={

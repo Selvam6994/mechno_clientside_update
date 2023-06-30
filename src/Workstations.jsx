@@ -46,13 +46,15 @@ function Workstations() {
       <div className="imageBox">
         <h1>Work Stations</h1>
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <h2>Home</h2>
+          <h2 style={{ textDecoration: "none", color: "white" }}>Home</h2>
         </Link>
         <Link
           to={"/industrialservices"}
           style={{ textDecoration: "none", color: "white" }}
         >
-          <h2>Industrial Services</h2>
+          <h2 style={{ textDecoration: "none", color: "white" }}>
+            Industrial Services
+          </h2>
         </Link>
       </div>
       <div className="aboutWorkstation">

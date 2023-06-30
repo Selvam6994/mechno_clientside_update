@@ -41,10 +41,10 @@ function Robotprogramming() {
       <div className="imageBox">
         <h1>Robotics</h1>
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <h2>Home</h2>
+          <h2  style={{ textDecoration: "none", color: "white" }}>Home</h2>
         </Link>
         <Link to={"/automationservices"} style={{ textDecoration: "none" }}>
-          <h2>Automatin Services</h2>
+          <h2  style={{ textDecoration: "none", color: "white" }}>Automatin Services</h2>
         </Link>
       </div>
       <div className="aboutRobotics">

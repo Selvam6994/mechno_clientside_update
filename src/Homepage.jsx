@@ -37,7 +37,7 @@ function Homepage() {
 
   return (
     <div className="homePage">
-       <ScrolltoTop/>
+      <ScrolltoTop />
       <Carousel className="carousel">
         {imageAndCaption.map((elements) => (
           <Carousel.Item key={elements.image}>

@@ -56,7 +56,7 @@ function TrolleyandRacks() {
       <div className="imageBox">
         <h1>Racks And Trolleys</h1>
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <h2>Home</h2>
+          <h2  style={{ textDecoration: "none", color: "white" }}>Home</h2>
         </Link>
         <Link
           to={"/industrialservices"}

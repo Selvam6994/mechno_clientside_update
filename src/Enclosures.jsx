@@ -8,10 +8,7 @@ import safetyEnclosures from "../src/assets/Images/Industrial services/Enclosure
 import aluminumProfileEnclosures from "../src/assets/Images/Industrial services/Enclosures/Aluminium Profile Enclosures.jpg";
 import ScrolltoTop from "./ScrolltoTop";
 
-
-function Enclosures({pageView}) {
-
-
+function Enclosures({ pageView }) {
   const enclosures = [
     {
       name: "Aluminium Enclosures",
@@ -27,8 +24,8 @@ function Enclosures({pageView}) {
     },
   ];
   return (
-    <div className="enclosuresPage" >
-        <ScrolltoTop/>
+    <div className="enclosuresPage">
+      <ScrolltoTop />
       <div className="topImage" ref={pageView}>
         <img
           src={topImage}
@@ -44,10 +41,12 @@ function Enclosures({pageView}) {
       <div className="imageBox">
         <h1>Machine Enclosures</h1>
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <h2>Home</h2>
+          <h2 style={{ textDecoration: "none", color: "white" }}>Home</h2>
         </Link>
         <Link to={"/industrialservices"} style={{ textDecoration: "none" }}>
-          <h2>Industrial Services</h2>
+          <h2 style={{ textDecoration: "none", color: "white" }}>
+            Industrial Services
+          </h2>
         </Link>
       </div>
       <div className="aboutEnclosures">
