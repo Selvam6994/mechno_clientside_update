@@ -15,6 +15,7 @@ import client13 from "../src/assets/Images/company icons/Wia.png";
 import client14 from "../src/assets/Images/company icons/NewTech.png";
 import client15 from "../src/assets/Images/company icons/Alison.png";
 import client16 from "../src/assets/Images/company icons/Bgrneo.png";
+import client6 from "../src/assets/Images/company icons/kia.png";
 import industrialServices from "../src/assets/Images/Industrial services/Fabrications.jpg";
 import automationServices from "../src/assets/Images/Automation Services/Automation.webp";
 import { Paper } from "@mui/material";
@@ -102,6 +103,11 @@ function About() {
     },
     {
       image: client3,
+      width: "50%",
+      height: "40%",
+    },
+    {
+      image: client6,
       width: "50%",
       height: "40%",
     },
