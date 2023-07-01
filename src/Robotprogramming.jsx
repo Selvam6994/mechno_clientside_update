@@ -84,7 +84,7 @@ function Robotprogramming() {
           </Paper>
         </motion.div>
         <div className="displayWorks">
-          <h2>The Works We Do</h2>
+          <h2>Our Work</h2>
           <div className="roboticsImageCards">
             {robotics.map((cardData) => (
               <div className="imageAndTitle">
