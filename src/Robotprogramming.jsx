@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import topImage from "../src/assets/Images/Automation Services/Robotics/Topimage.jpg";
 import programming from "../src/assets/Images/Automation Services/Robotics/Robot Programming.jpg";
 import nachi from "../src/assets/Images/Automation Services/Robotics/Nachi.jpg";
-// import yaskawa from "../src/assets/Images/Automation Services/Robotics/Yaskawa.jpg";
+import yaskawaRobot from "../src/assets/Images/Automation Services/Robotics/Yaskawa.jpg";
 import ScrolltoTop from "./ScrolltoTop";
 
 function Robotprogramming() {
@@ -18,10 +18,10 @@ function Robotprogramming() {
         name: "NACHI",
         image: nachi,
       },
-      // {
-      //   name: "YASKAWA",
-      //   image: yaskawa,
-      // }
+      {
+        name: "YASKAWA",
+        image: yaskawaRobot,
+      }
   ];
   return (
     <div className="roboticsPage">
